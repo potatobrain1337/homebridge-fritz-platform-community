@@ -99,7 +99,7 @@ See the [changelog](CHANGELOG.md) for changes between versions of this package.
 - The plugin itself is not a web server; impact is limited to the Homebridge host. If you need a clean audit, pin a forked `@seydx/fritzbox` with upgraded dependencies or vendor a patched build.
 - Until upstream is fixed, running `npm audit fix` in this project will not resolve these findings.
 
-**<u>NOTE:</u>** Updating from **< v5.x** to **>= v5.x** will crash your homebridge, please **REMOVE** the old version first and check also the new [example-config.json](https://github.com/SeydX/homebridge-fritz-platform/blob/master/example/example-config.json) !
+**<u>NOTE:</u>** Updating from **< v5.x** to **>= v5.x** will crash your homebridge, please **REMOVE** the old version first and check also the new [example-config.json](example/example-config.json) !
 
 
 
@@ -122,13 +122,13 @@ See the [changelog](CHANGELOG.md) for changes between versions of this package.
 
 You can contribute to this homebridge plugin in following ways:
 
-- [Report issues](https://github.com/SeydX/homebridge-fritz-platform/issues) and help verify fixes as they are checked in.
-- Review the [source code changes](https://github.com/SeydX/homebridge-fritz-platform/pulls).
+- [Report issues](https://github.com/potatobrain1337/homebridge-fritz-platform-community/issues) and help verify fixes as they are checked in.
+- Review the [source code changes](https://github.com/potatobrain1337/homebridge-fritz-platform-community/pulls).
 - Contribute bug fixes.
 - Contribute changes to extend the capabilities
 - Pull requests are accepted.
 
-This Plugin uses modules from others, see [CONTRIBUTING](https://github.com/SeydX/homebridge-fritz-platform/blob/master/CONTRIBUTING.md) for credits.
+This Plugin uses modules from others, see [CONTRIBUTING](CONTRIBUTING.md) for credits.
 
 
 ## Disclaimer

@@ -247,8 +247,8 @@ This change will break your automations with your smarthome thermostats because 
 - Bump dependencies
 
 # v5.0.25 - 2021-02-28
-- Fix [#157](https://github.com/SeydX/homebridge-fritz-platform/issues/157)
-- Fix [#139](https://github.com/SeydX/homebridge-fritz-platform/issues/139)
+- Fix #157
+- Fix #139
 
 # v5.0.24 - 2021-02-28
 - Fixed broadband
@@ -488,7 +488,7 @@ Info: If you have Smarthome devices of type "switch" please REMOVE it first from
 
 # v3.0.0 - 2019-03-02
 
-**Breaking changes, remove v2.x first before continue! Check also the new [example-config.json](https://github.com/SeydX/homebridge-fritz-platform/blob/master/example/example-config.json) !**
+**Breaking changes, remove v2.x first before continue! Check also the new [example-config.json](example/example-config.json) !**
 
 - **[NEW]** Callmonitor with extended FakeGato support
 - **[NEW]** Callmonitor PhoneBook with auto prefix functionality
@@ -513,15 +513,15 @@ Info: If you have Smarthome devices of type "switch" please REMOVE it first from
 
 # v2.7.1 - 2018-06-20
 - Bugfixes
-- Note: "smarthome" were changed in config.json! Please check before update. ([example-config.json](https://github.com/SeydX/homebridge-fritz-platform/blob/master/example/example-config.json#L98))
+- Note: "smarthome" were changed in config.json! Please check before update. ([example-config.json](example/example-config.json))
 - Note: 'thermo' & 'contact' currently not supported (smarthome)
 
 # v2.7.0 - 2018-06-19
-- Added [Smarthome devices](https://github.com/SeydX/homebridge-fritz-platform/blob/master/docs/config/Smarthome.md) 
+- Added Smarthome devices documentation
 - Code cleanup
 - Better error handling
 - Bugfixes
-- Added own reboot functionality to repeater. [example-config.json](https://github.com/SeydX/homebridge-fritz-platform/blob/master/example/example-config.json#L110)
+- Added own reboot functionality to repeater. [example-config.json](example/example-config.json)
 - Removed repeater reboot from main device
 
 # v2.6.4 - 2018-06-18
@@ -532,11 +532,11 @@ Info: If you have Smarthome devices of type "switch" please REMOVE it first from
 # v2.6.2 - 2018-06-18
 - Code clean up
 - Bugfixes
-- Added "[refresh wifi canal](https://github.com/SeydX/homebridge-fritz-platform/blob/cbe48c0a2b9b86bf9706711c19e4eb4f684f01f5/example/example-config.json#L23)"
+- Added "refresh wifi canal" (see example config)
 
 # v2.6.0 - 2018-06-17
 - Bugfixes
-- Remote Login possibility [see docs](https://github.com/SeydX/homebridge-fritz-platform/blob/master/docs/config/FritzBox.md)
+- Remote Login possibility (see docs)
 - Updated dependencies
 - Better interaction with the TR064 module
 
@@ -575,15 +575,15 @@ Info: If you have Smarthome devices of type "switch" please REMOVE it first from
 
 # v2.3.8 - 2018-06-11
 - Changed presence polling
-- Added possibility to remove/add "Anyone" sensor from config.json (see [example-config.json](https://github.com/SeydX/homebridge-fritz-platform/blob/master/example/example-config.json))
+- Added possibility to remove/add "Anyone" sensor from config.json (see [example-config.json](example/example-config.json))
 
 # v2.3.7 - 2018-06-11
 - Better presence detection
-- Changed telegram notification for presence (see [example-config.json](https://github.com/SeydX/homebridge-fritz-platform/blob/master/example/example-config.json))
+- Changed telegram notification for presence (see [example-config.json](example/example-config.json))
 - Changed telegram function (possibility to choose which message should pushed as notification, if any message field = "" or not exist, you will not receive any notification for only this function without affecting other functions)
 - Polling limit reduced from 10s to 5s
 - Bugfixes
-- New [Debug tool](https://github.com/SeydX/fritzplatform-util)
+- New debug tool (fritzplatform-util)
 
 # v2.3.6 - 2018-06-08
 - Fixed Auth. failure (presence)
@@ -593,7 +593,7 @@ Info: If you have Smarthome devices of type "switch" please REMOVE it first from
 - Fixed Auth. failure (presence)
 
 # v2.3.3 - 2018-06-08
-- Changed presence structure (see [example-config.json](https://github.com/SeydX/homebridge-fritz-platform/blob/master/example/example-config.json))
+- Changed presence structure (see [example-config.json](example/example-config.json))
 - An error has been fixed that caused the presence sensors not to switch correctly (if no presence detected)
 - Improved presence adresse detection
 - Possiblitiy to add ip adress to presence

@@ -2,8 +2,8 @@
 
 If you are using multiple instances, than the reboot functionality will be perfect for you. The plugin includes 2 scripts to run with your reboot. 
 
-E.g. the included [ON script](https://github.com/SeydX/homebridge-fritz-platform/blob/master/cmd/reboot-start.sh) will let stop all your homebridge instances before shutting down your network
-and the [OFF script](https://github.com/SeydX/homebridge-fritz-platform/blob/master/cmd/reboot-finished.sh) will let you restart all of your homebridge instances after reboot is done and network is up!
+E.g. the included [ON script](../cmd/reboot-start.sh) will let stop all your homebridge instances before shutting down your network
+and the [OFF script](../cmd/reboot-finished.sh) will let you restart all of your homebridge instances after reboot is done and network is up!
 
 This is ideal for people who do not want to worry about rebooting
 

@@ -13,9 +13,9 @@ If you do not have a connected device, you can also do it via the phone book. Ac
 
 
 **1. Phone dialer**
-![Dialer](https://raw.githubusercontent.com/SeydX/homebridge-fritz-platform/master/docs/images/dialer.png)
+![Dialer](images/dialer.png)
 
 
 
 **2. Enable port via phone book**
-![PhoneBook](https://raw.githubusercontent.com/SeydX/homebridge-fritz-platform/master/docs/images/ports_callmonitor.png)
+![PhoneBook](images/ports_callmonitor.png)

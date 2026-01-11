@@ -2,7 +2,7 @@
   "pluginAlias": "FritzPlatform",
   "pluginType": "platform",
   "singular": true,
-  "footerDisplay": "Community fork maintained by potatobrain1337 (original by SeydX). Docs are currently shared with the original project: [GitHub repository](https://github.com/SeydX/homebridge-fritz-platform)",
+  "footerDisplay": "Community fork maintained by potatobrain1337 (original by SeydX). Docs: [GitHub repository](https://github.com/potatobrain1337/homebridge-fritz-platform-community)",
   "schema": {
     "name": {
       "title": "Name",
