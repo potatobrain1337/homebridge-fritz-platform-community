@@ -39,11 +39,11 @@
   },
   "dependencies": {
     "@seydx/fritzbox": "^2.3.1",
-    "fakegato-history": "0.6.2",
+    "fakegato-history": "0.6.7",
     "form-data": "^4.0.0",
-    "fs-extra": "10.0.0",
+    "fs-extra": "11.3.3",
     "moment": "^2.29.1",
-    "ping": "0.4.1"
+    "ping": "1.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.15.5",
