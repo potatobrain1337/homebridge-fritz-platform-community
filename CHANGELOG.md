@@ -1,5 +1,11 @@
 # Changelog
 
+# v6.1.3 - 2026-01-11
+
+## Improvements
+- Improve Homebridge UI config layout (clearer section names and grouped Smart Home device options).
+- Expose `options.logging.offlineWarnThrottleMinutes` in the UI.
+
 # v6.1.2 - 2026-01-11
 
 ## Improvements

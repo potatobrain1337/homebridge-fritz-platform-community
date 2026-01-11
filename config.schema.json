@@ -581,7 +581,7 @@
             "type": "boolean",
             "description": "If enabled, the device/group will not trigger on switching on/off.",
             "condition": {
-              "functionBody": "try { model.smarthome[arrayIndices[0]].accType === 'switch' || model.smarthome[arrayIndices[0]].accTypeGroup === 'switch' || model.smarthome[arrayIndices[0]].accTypeGroup === 'switch-lightbulb' } catch(e){ return false }"
+              "functionBody": "try { return model.smarthome[arrayIndices[0]].accType === 'switch' || model.smarthome[arrayIndices[0]].accTypeGroup === 'switch' || model.smarthome[arrayIndices[0]].accTypeGroup === 'switch-lightbulb' } catch(e){ return false }"
             }
           },
           "group": {
@@ -1634,7 +1634,7 @@
   "layout": [
     "name",
     {
-      "title": "Log",
+      "title": "Logging",
       "orderable": false,
       "expandable": true,
       "expanded": false,
@@ -1643,11 +1643,12 @@
         "debug",
         "warn",
         "error",
-        "extendedError"
+        "extendedError",
+        "options.logging.offlineWarnThrottleMinutes"
       ]
     },
     {
-      "title": "Devices",
+      "title": "Fritz!Box Devices",
       "expandable": true,
       "expanded": false,
       "orderable": false,
@@ -1845,7 +1846,7 @@
       ]
     },
     {
-      "title": "Presence",
+      "title": "Presence Sensors",
       "expandable": true,
       "expanded": false,
       "orderable": false,
@@ -1914,7 +1915,7 @@
       ]
     },
     {
-      "title": "Wake on LAN",
+      "title": "Wake-on-LAN",
       "expandable": true,
       "expanded": false,
       "orderable": false,
@@ -1934,7 +1935,7 @@
       ]
     },
     {
-      "title": "Smart Home",
+      "title": "Smart Home Devices",
       "expandable": true,
       "expanded": false,
       "orderable": false,
@@ -1954,7 +1955,7 @@
             "smarthome[].accTypeGroup",
             {
               "key": "smarthome[]",
-              "title": "Advanced",
+              "title": "Features",
               "type": "section",
               "orderable": false,
               "expandable": true,
@@ -1963,19 +1964,84 @@
                 "functionBody": "try { return model.smarthome[arrayIndices[0]].active } catch(e){ return false }"
               },
               "items": [
-                "smarthome[].readOnly",
-                "smarthome[].energy",
-                "smarthome[].startValue",
-                "smarthome[].externTemperatureSensor",
-                "smarthome[].temperature",
-                "smarthome[].humidity",
-                "smarthome[].window",
-                "smarthome[].openWindow",
-                "smarthome[].brightness",
-                "smarthome[].color",
-                "smarthome[].battery",
-                "smarthome[].longPress",
-                "smarthome[].buttons"
+                {
+                  "key": "smarthome[]",
+                  "title": "Switch / Outlet",
+                  "type": "section",
+                  "orderable": false,
+                  "expandable": true,
+                  "expanded": false,
+                  "condition": {
+                    "functionBody": "try { return model.smarthome[arrayIndices[0]].accType === 'switch' || model.smarthome[arrayIndices[0]].accTypeGroup === 'switch' || model.smarthome[arrayIndices[0]].accTypeGroup === 'switch-lightbulb' } catch(e){ return false }"
+                  },
+                  "items": [
+                    "smarthome[].readOnly",
+                    "smarthome[].energy",
+                    "smarthome[].startValue"
+                  ]
+                },
+                {
+                  "key": "smarthome[]",
+                  "title": "Sensors",
+                  "type": "section",
+                  "orderable": false,
+                  "expandable": true,
+                  "expanded": false,
+                  "condition": {
+                    "functionBody": "try { return model.smarthome[arrayIndices[0]].accType === 'button' || model.smarthome[arrayIndices[0]].accType === 'thermostat' || model.smarthome[arrayIndices[0]].accType === 'switch' || model.smarthome[arrayIndices[0]].accType === 'temperature' || model.smarthome[arrayIndices[0]].accType === 'window' || model.smarthome[arrayIndices[0]].accType === 'contact' || model.smarthome[arrayIndices[0]].accType === 'smoke' || model.smarthome[arrayIndices[0]].accTypeGroup === 'switch' || model.smarthome[arrayIndices[0]].accTypeGroup === 'switch-lightbulb' || model.smarthome[arrayIndices[0]].accTypeGroup === 'thermostat' } catch(e){ return false }"
+                  },
+                  "items": [
+                    "smarthome[].temperature",
+                    "smarthome[].humidity",
+                    "smarthome[].battery"
+                  ]
+                },
+                {
+                  "key": "smarthome[]",
+                  "title": "Thermostat",
+                  "type": "section",
+                  "orderable": false,
+                  "expandable": true,
+                  "expanded": false,
+                  "condition": {
+                    "functionBody": "try { return model.smarthome[arrayIndices[0]].accType === 'thermostat' } catch(e){ return false }"
+                  },
+                  "items": [
+                    "smarthome[].externTemperatureSensor",
+                    "smarthome[].window",
+                    "smarthome[].openWindow"
+                  ]
+                },
+                {
+                  "key": "smarthome[]",
+                  "title": "Lightbulb",
+                  "type": "section",
+                  "orderable": false,
+                  "expandable": true,
+                  "expanded": false,
+                  "condition": {
+                    "functionBody": "try { return model.smarthome[arrayIndices[0]].accType === 'lightbulb' || model.smarthome[arrayIndices[0]].accTypeGroup === 'lightbulb' || model.smarthome[arrayIndices[0]].accTypeGroup === 'switch-lightbulb' } catch(e){ return false }"
+                  },
+                  "items": [
+                    "smarthome[].brightness",
+                    "smarthome[].color"
+                  ]
+                },
+                {
+                  "key": "smarthome[]",
+                  "title": "Button",
+                  "type": "section",
+                  "orderable": false,
+                  "expandable": true,
+                  "expanded": false,
+                  "condition": {
+                    "functionBody": "try { return model.smarthome[arrayIndices[0]].accType === 'button' } catch(e){ return false }"
+                  },
+                  "items": [
+                    "smarthome[].buttons",
+                    "smarthome[].longPress"
+                  ]
+                }
               ]
             }
           ]
@@ -1983,7 +2049,7 @@
       ]
     },
     {
-      "title": "Callmonitor",
+      "title": "Call Monitor",
       "orderable": false,
       "expandable": true,
       "expanded": false,
@@ -2037,7 +2103,7 @@
       ]
     },
     {
-      "title": "Network Monitor",
+      "title": "Network Watch",
       "expandable": true,
       "expanded": false,
       "orderable": false,
@@ -2060,7 +2126,7 @@
       ]
     },
     {
-      "title": "Options",
+      "title": "Global Options",
       "orderable": false,
       "expandable": true,
       "expanded": false,
