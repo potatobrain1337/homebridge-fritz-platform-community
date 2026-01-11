@@ -1,5 +1,10 @@
 # Changelog
 
+# v6.1.2 - 2026-01-11
+
+## Improvements
+- Throttle repeated "Device offline" warnings per accessory (configurable via `options.logging.offlineWarnThrottleMinutes`).
+
 # v6.1.1 - 2026-01-11
 
 ## Other Changes

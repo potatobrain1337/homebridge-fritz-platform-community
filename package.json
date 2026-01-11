@@ -1,6 +1,6 @@
 {
   "name": "homebridge-fritz-platform-community",
-  "version": "6.1.1",
+  "version": "6.1.2",
   "description": "Community-maintained fork of homebridge-fritz-platform (original by SeydX) updated for Homebridge v2.",
   "main": "index.js",
   "funding": [],

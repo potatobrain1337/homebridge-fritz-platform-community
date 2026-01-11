@@ -125,7 +125,7 @@ class Handler {
                 }
               }
             } else {
-              logger.warn('Device offline!', `${accessory.displayName} (${subtype})`);
+              logger.warnDeviceOffline(`${accessory.displayName} (${subtype})`);
             }
           } else {
             logger.warn(
@@ -267,7 +267,7 @@ class Handler {
                 }
               }
             } else {
-              logger.warn('Device offline!', `${accessory.displayName} (${subtype})`);
+              logger.warnDeviceOffline(`${accessory.displayName} (${subtype})`);
             }
           } else {
             logger.warn(

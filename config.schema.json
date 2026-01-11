@@ -1373,7 +1373,7 @@
     },
     "options": {
       "title": "Global Options",
-      "description": "Global plugin options that affect presence helpers, reboot scripts, and polling.",
+      "description": "Global plugin options that affect presence helpers, reboot scripts, polling, and logging.",
       "type": "object",
       "properties": {
         "presence": {
@@ -1424,6 +1424,20 @@
               "title": "Off Script",
               "type": "string",
               "description": "Script to execute after reboot finished."
+            }
+          }
+        },
+        "logging": {
+          "title": "Logging",
+          "type": "object",
+          "properties": {
+            "offlineWarnThrottleMinutes": {
+              "title": "Device Offline Warning Throttle (minutes)",
+              "type": "integer",
+              "placeholder": 5,
+              "default": 5,
+              "minimum": 0,
+              "description": "Limit repeated \"Device offline\" warnings per accessory. Set to 0 to disable throttling."
             }
           }
         },

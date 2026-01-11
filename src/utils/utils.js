@@ -50,6 +50,12 @@ exports.generateConfig = (config) => {
         on: config.options && config.options.reboot && config.options.reboot.on ? config.options.reboot.on : false,
         off: config.options && config.options.reboot && config.options.reboot.off ? config.options.reboot.off : false,
       },
+      logging: {
+        offlineWarnThrottleMinutes:
+          config.options && config.options.logging && config.options.logging.offlineWarnThrottleMinutes >= 0
+            ? config.options.logging.offlineWarnThrottleMinutes
+            : 5,
+      },
     },
     telegram: {
       active: config.telegram && config.telegram.active ? true : false,
