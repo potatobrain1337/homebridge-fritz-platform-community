@@ -95,9 +95,8 @@ See the [changelog](CHANGELOG.md) for changes between versions of this package.
 
 ## Security / Known Vulnerabilities
 
-- `npm audit` reports issues in transitive dependencies of `@seydx/fritzbox` (e.g., `class-transformer`, `class-validator`, `crypto-js`, `xml2js`, `validator`). At the time of writing, no patched upstream versions are available and `@seydx/fritzbox` has no newer release.
-- The plugin itself is not a web server; impact is limited to the Homebridge host. If you need a clean audit, pin a forked `@seydx/fritzbox` with upgraded dependencies or vendor a patched build.
-- Until upstream is fixed, running `npm audit fix` in this project will not resolve these findings.
+- This plugin depends on `@seydx/fritzbox`, but installs it from the community-maintained fork `potatobrain1337/fritzbox` to address upstream security advisories.
+- The plugin itself is not a web server; impact is limited to the Homebridge host.
 
 **<u>NOTE:</u>** Updating from **< v5.x** to **>= v5.x** will crash your homebridge, please **REMOVE** the old version first and check also the new [example-config.json](example/example-config.json) !
 
