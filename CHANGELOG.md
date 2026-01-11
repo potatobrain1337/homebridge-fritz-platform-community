@@ -1,5 +1,16 @@
 # Changelog
 
+# v6.1.1 - 2026-01-11
+
+## Other Changes
+- Allow Node.js 24 in engines to remove EBADENGINE warning in Homebridge Docker.
+
+# v6.1.0 - 2026-01-11
+
+## Notable Changes
+- Package renamed to `homebridge-fritz-platform-community` and now maintained by potatobrain1337; original author SeydX credited.
+- Homebridge v2 compatibility adjustments from fork applied (no functional changes beyond compatibility and metadata).
+
 # v6.0.18 - 2021-10-06
 
 ## Bugfixes

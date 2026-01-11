@@ -41,7 +41,7 @@ const { WolAccessory, WolSetup } = require('./accessories/wol/wol');
 const CustomTypes = require('./types/custom.types');
 const EveTypes = require('./types/eve.types');
 
-const PLUGIN_NAME = 'homebridge-fritz-platform';
+const PLUGIN_NAME = 'homebridge-fritz-platform-community';
 const PLATFORM_NAME = 'FritzPlatform';
 
 var Accessory, HistoryService;

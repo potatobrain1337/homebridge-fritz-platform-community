@@ -24,6 +24,7 @@ class Handler {
     this.accessories = accessories;
     this.polling = polling;
     this.fritzbox = meshMaster.fritzbox;
+    this.BatteryService = this.api.hap.Service.Battery || this.api.hap.Service.BatteryService;
 
     this.configured = true;
 
@@ -713,12 +714,12 @@ class Handler {
                   let lowBattery = device.battery.low || 0;
 
                   accessory
-                    .getService(this.api.hap.Service.BatteryService)
+                    .getService(this.BatteryService)
                     .getCharacteristic(this.api.hap.Characteristic.BatteryLevel)
                     .updateValue(batteryLevel);
 
                   accessory
-                    .getService(this.api.hap.Service.BatteryService)
+                    .getService(this.BatteryService)
                     .getCharacteristic(this.api.hap.Characteristic.StatusLowBattery)
                     .updateValue(lowBattery);
                 } else {
@@ -777,12 +778,12 @@ class Handler {
                   let lowBattery = device.battery.low || 0;
 
                   accessory
-                    .getService(this.api.hap.Service.BatteryService)
+                    .getService(this.BatteryService)
                     .getCharacteristic(this.api.hap.Characteristic.BatteryLevel)
                     .updateValue(batteryLevel);
 
                   accessory
-                    .getService(this.api.hap.Service.BatteryService)
+                    .getService(this.BatteryService)
                     .getCharacteristic(this.api.hap.Characteristic.StatusLowBattery)
                     .updateValue(lowBattery);
                 } else {
@@ -841,12 +842,12 @@ class Handler {
                   let lowBattery = device.battery.low || 0;
 
                   accessory
-                    .getService(this.api.hap.Service.BatteryService)
+                    .getService(this.BatteryService)
                     .getCharacteristic(this.api.hap.Characteristic.BatteryLevel)
                     .updateValue(batteryLevel);
 
                   accessory
-                    .getService(this.api.hap.Service.BatteryService)
+                    .getService(this.BatteryService)
                     .getCharacteristic(this.api.hap.Characteristic.StatusLowBattery)
                     .updateValue(lowBattery);
                 } else {
@@ -905,12 +906,12 @@ class Handler {
                   let lowBattery = device.battery.low || 0;
 
                   accessory
-                    .getService(this.api.hap.Service.BatteryService)
+                    .getService(this.BatteryService)
                     .getCharacteristic(this.api.hap.Characteristic.BatteryLevel)
                     .updateValue(batteryLevel);
 
                   accessory
-                    .getService(this.api.hap.Service.BatteryService)
+                    .getService(this.BatteryService)
                     .getCharacteristic(this.api.hap.Characteristic.StatusLowBattery)
                     .updateValue(lowBattery);
                 } else {
@@ -1097,12 +1098,12 @@ class Handler {
                   let lowBattery = device.battery.low || 0;
 
                   accessory
-                    .getService(this.api.hap.Service.BatteryService)
+                    .getService(this.BatteryService)
                     .getCharacteristic(this.api.hap.Characteristic.BatteryLevel)
                     .updateValue(batteryLevel);
 
                   accessory
-                    .getService(this.api.hap.Service.BatteryService)
+                    .getService(this.BatteryService)
                     .getCharacteristic(this.api.hap.Characteristic.StatusLowBattery)
                     .updateValue(lowBattery);
                 } else {
@@ -1209,12 +1210,12 @@ class Handler {
                   let lowBattery = device.battery.low || 0;
 
                   accessory
-                    .getService(this.api.hap.Service.BatteryService)
+                    .getService(this.BatteryService)
                     .getCharacteristic(this.api.hap.Characteristic.BatteryLevel)
                     .updateValue(batteryLevel);
 
                   accessory
-                    .getService(this.api.hap.Service.BatteryService)
+                    .getService(this.BatteryService)
                     .getCharacteristic(this.api.hap.Characteristic.StatusLowBattery)
                     .updateValue(lowBattery);
                 } else {

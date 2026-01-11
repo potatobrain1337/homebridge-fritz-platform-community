@@ -2,18 +2,18 @@
     <img src="https://github.com/SeydX/homebridge-fritz-platform/blob/master/images/fb_logo.png" height="200">
 </p>
 
-# homebridge-fritz-platform
+# homebridge-fritz-platform-community (fork of homebridge-fritz-platform)
 
-[![npm](https://img.shields.io/npm/v/homebridge-fritz-platform.svg?style=flat-square)](https://www.npmjs.com/package/homebridge-fritz-platform)
+[![npm](https://img.shields.io/npm/v/homebridge-fritz-platform.svg?style=flat-square)](https://www.npmjs.com/package/homebridge-fritz-platform) <!-- Original badge kept until new package is published -->
 [![npm](https://img.shields.io/npm/dt/homebridge-fritz-platform.svg?style=flat-square)](https://www.npmjs.com/package/homebridge-fritz-platform)
 [![GitHub last commit](https://img.shields.io/github/last-commit/SeydX/homebridge-fritz-platform.svg?style=flat-square)](https://github.com/SeydX/homebridge-fritz-platform)
 [![verified-by-homebridge](https://badgen.net/badge/homebridge/verified/purple)](https://github.com/homebridge/homebridge/wiki/Verified-Plugins)
 [![Discord](https://img.shields.io/discord/432663330281226270?color=728ED5&logo=discord&label=discord)](https://discord.gg/kqNCe2D)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg?style=flat-square&maxAge=2592000)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NP4T3KASWQLD8)
 
-**Creating and maintaining Homebridge plugins consume a lot of time and effort, if you would like to share your appreciation, feel free to "Star" or donate.** [Click here](https://github.com/SeydX) to review more of my plugins.
+> Community fork maintained by **potatobrain1337**. Original project by **SeydX**. Published as `homebridge-fritz-platform-community` to keep the original package intact while adding Homebridge v2 compatibility. Badges above point to the original project until the forked npm package is published. Install from npm with `npm i -g homebridge-fritz-platform-community` once released, or use the tarball directly from this fork.
 
-[Click here](https://github.com/SeydX) to review more of my plugins.
+**Creating and maintaining Homebridge plugins consume a lot of time and effort, if you would like to share your appreciation, feel free to "Star" or donate.** [Click here](https://github.com/SeydX) to review more of SeydX's plugins.
 
 
 ## Info
@@ -88,12 +88,18 @@ This plugin allows almost full control of **AVM** hardware like:
 - **Telegram**
   - Receive custom messages for occupancy detection (presence), device detection (watch network), incoming/outgoing calls (callmonitor), alarm, router state and outlet usage
 
-Any system capable of running [Homebridge](https://github.com/nfarina/homebridge/) can be used to run **homebridge-fritz-platform**. The only need is network access to the device or program in question.
+Any system capable of running [Homebridge](https://github.com/nfarina/homebridge/) can be used to run **homebridge-fritz-platform-community**. The only need is network access to the device or program in question.
 
 
 ## Changelog
 
-See the [changelog](https://github.com/SeydX/homebridge-fritz-platform/blob/master/CHANGELOG.md) for changes between versions of this package.
+See the [changelog](CHANGELOG.md) for changes between versions of this package.
+
+## Security / Known Vulnerabilities
+
+- `npm audit` reports issues in transitive dependencies of `@seydx/fritzbox` (e.g., `class-transformer`, `class-validator`, `crypto-js`, `xml2js`, `validator`). At the time of writing, no patched upstream versions are available and `@seydx/fritzbox` has no newer release.
+- The plugin itself is not a web server; impact is limited to the Homebridge host. If you need a clean audit, pin a forked `@seydx/fritzbox` with upgraded dependencies or vendor a patched build.
+- Until upstream is fixed, running `npm audit fix` in this project will not resolve these findings.
 
 **<u>NOTE:</u>** Updating from **< v5.x** to **>= v5.x** will crash your homebridge, please **REMOVE** the old version first and check also the new [example-config.json](https://github.com/SeydX/homebridge-fritz-platform/blob/master/example/example-config.json) !
 

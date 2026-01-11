@@ -1,8 +1,9 @@
 /**
  * v6
  *
- * @url https://github.com/SeydX/homebridge-fritz-platform
- * @author SeydX <seyd55@outlook.de>
+ * Community fork maintained by potatobrain1337 (original by SeydX)
+ * @url https://github.com/potatobrain1337/homebridge-fritz-platform-community
+ * @author potatobrain1337
  *
  **/
 
@@ -10,5 +11,5 @@
 
 module.exports = function (homebridge) {
   let FritzPlatform = require('./src/platform.js')(homebridge);
-  homebridge.registerPlatform('homebridge-fritz-platform', 'FritzPlatform', FritzPlatform, true);
+  homebridge.registerPlatform('homebridge-fritz-platform-community', 'FritzPlatform', FritzPlatform, true);
 };

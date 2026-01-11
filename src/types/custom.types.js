@@ -3,8 +3,7 @@
 const inherits = require('util').inherits;
 
 exports.registerWith = (hap) => {
-  const Characteristic = hap.Characteristic;
-  const Service = hap.Service;
+  const { Characteristic, Service, Formats, Perms } = hap;
 
   /*
    * Characteristic.WifiTwo
@@ -12,8 +11,8 @@ exports.registerWith = (hap) => {
   Characteristic.WifiTwo = function () {
     Characteristic.call(this, 'WIFI 2.4GHZ', '0026e147-5d51-4f42-b157-6aca6050be8e');
     this.setProps({
-      format: Characteristic.Formats.BOOL,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.WRITE, Characteristic.Perms.NOTIFY],
+      format: Formats.BOOL,
+      perms: [Perms.READ, Perms.WRITE, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -26,8 +25,8 @@ exports.registerWith = (hap) => {
   Characteristic.WifiFive = function () {
     Characteristic.call(this, 'WIFI 5GHZ', 'a72aeeca-c6ce-45ce-b026-5d400aab5fc9');
     this.setProps({
-      format: Characteristic.Formats.BOOL,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.WRITE, Characteristic.Perms.NOTIFY],
+      format: Formats.BOOL,
+      perms: [Perms.READ, Perms.WRITE, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -40,8 +39,8 @@ exports.registerWith = (hap) => {
   Characteristic.WifiGuest = function () {
     Characteristic.call(this, 'WIFI Guest', 'a87bbf2b-885c-4713-8169-22abdbf0b2a1');
     this.setProps({
-      format: Characteristic.Formats.BOOL,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.WRITE, Characteristic.Perms.NOTIFY],
+      format: Formats.BOOL,
+      perms: [Perms.READ, Perms.WRITE, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -54,8 +53,8 @@ exports.registerWith = (hap) => {
   Characteristic.PhoneBook = function () {
     Characteristic.call(this, 'Refresh Phone Book', '8f9aeaa4-092f-4c3a-85f1-dfd064a07c3d');
     this.setProps({
-      format: Characteristic.Formats.BOOL,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.WRITE, Characteristic.Perms.NOTIFY],
+      format: Formats.BOOL,
+      perms: [Perms.READ, Perms.WRITE, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -68,8 +67,8 @@ exports.registerWith = (hap) => {
   Characteristic.DialAlarm = function () {
     Characteristic.call(this, 'Alarm', '8fe6e841-41e4-479f-b334-8af339ce5b30');
     this.setProps({
-      format: Characteristic.Formats.BOOL,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.WRITE, Characteristic.Perms.NOTIFY],
+      format: Formats.BOOL,
+      perms: [Perms.READ, Perms.WRITE, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -82,8 +81,8 @@ exports.registerWith = (hap) => {
   Characteristic.WifiWPS = function () {
     Characteristic.call(this, 'WIFI WPS', '991dd58c-7d8c-46b1-acd1-411d8f6902ac');
     this.setProps({
-      format: Characteristic.Formats.BOOL,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.WRITE, Characteristic.Perms.NOTIFY],
+      format: Formats.BOOL,
+      perms: [Perms.READ, Perms.WRITE, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -96,8 +95,8 @@ exports.registerWith = (hap) => {
   Characteristic.Reconnect = function () {
     Characteristic.call(this, 'Reconnect', 'ce1cb310-d2d8-4cd1-9686-c6f2aba6ad15');
     this.setProps({
-      format: Characteristic.Formats.BOOL,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.WRITE, Characteristic.Perms.NOTIFY],
+      format: Formats.BOOL,
+      perms: [Perms.READ, Perms.WRITE, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -110,8 +109,8 @@ exports.registerWith = (hap) => {
   Characteristic.DECT = function () {
     Characteristic.call(this, 'DECT Station', '1718fc65-453b-403a-ab81-79a1c96ba195');
     this.setProps({
-      format: Characteristic.Formats.BOOL,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.WRITE, Characteristic.Perms.NOTIFY],
+      format: Formats.BOOL,
+      perms: [Perms.READ, Perms.WRITE, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -124,8 +123,8 @@ exports.registerWith = (hap) => {
   Characteristic.AnsweringMachine = function () {
     Characteristic.call(this, 'Answering Machine', 'd19ef9d5-3bc6-47ac-b6bb-7bdcf0df20b0');
     this.setProps({
-      format: Characteristic.Formats.BOOL,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.WRITE, Characteristic.Perms.NOTIFY],
+      format: Formats.BOOL,
+      perms: [Perms.READ, Perms.WRITE, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -138,8 +137,8 @@ exports.registerWith = (hap) => {
   Characteristic.Deflection = function () {
     Characteristic.call(this, 'Deflection', '658086c7-274c-4988-bd5e-3c720fa3054d');
     this.setProps({
-      format: Characteristic.Formats.BOOL,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.WRITE, Characteristic.Perms.NOTIFY],
+      format: Formats.BOOL,
+      perms: [Perms.READ, Perms.WRITE, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -152,8 +151,8 @@ exports.registerWith = (hap) => {
   Characteristic.WakeUp = function () {
     Characteristic.call(this, 'Wake Up', 'c60a4aa9-cefb-4c61-8185-ad2b3ba52842');
     this.setProps({
-      format: Characteristic.Formats.BOOL,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.WRITE, Characteristic.Perms.NOTIFY],
+      format: Formats.BOOL,
+      perms: [Perms.READ, Perms.WRITE, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -166,8 +165,8 @@ exports.registerWith = (hap) => {
   Characteristic.DeviceLED = function () {
     Characteristic.call(this, 'LED', 'fd81f0dc-4324-457e-8164-289743873fb1');
     this.setProps({
-      format: Characteristic.Formats.BOOL,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.WRITE, Characteristic.Perms.NOTIFY],
+      format: Formats.BOOL,
+      perms: [Perms.READ, Perms.WRITE, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -180,8 +179,8 @@ exports.registerWith = (hap) => {
   Characteristic.DeviceLock = function () {
     Characteristic.call(this, 'Device Lock', '56af4239-46bc-4bae-b55b-dbc5be2d0897');
     this.setProps({
-      format: Characteristic.Formats.BOOL,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.WRITE, Characteristic.Perms.NOTIFY],
+      format: Formats.BOOL,
+      perms: [Perms.READ, Perms.WRITE, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -194,8 +193,8 @@ exports.registerWith = (hap) => {
   Characteristic.RingLock = function () {
     Characteristic.call(this, 'Ring Lock', 'cab7d43e-422c-4452-bc9a-11c89454332b');
     this.setProps({
-      format: Characteristic.Formats.BOOL,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.WRITE, Characteristic.Perms.NOTIFY],
+      format: Formats.BOOL,
+      perms: [Perms.READ, Perms.WRITE, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -208,8 +207,8 @@ exports.registerWith = (hap) => {
   Characteristic.DNSServer = function () {
     Characteristic.call(this, 'DNS Server', 'c34f1eb0-92bb-44a8-b399-17f2599639f1');
     this.setProps({
-      format: Characteristic.Formats.BOOL,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.WRITE, Characteristic.Perms.NOTIFY],
+      format: Formats.BOOL,
+      perms: [Perms.READ, Perms.WRITE, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -222,8 +221,8 @@ exports.registerWith = (hap) => {
   Characteristic.FallbackInternet = function () {
     Characteristic.call(this, 'Internet Fallback', 'ef088934-4ec8-4174-b550-e8a8faaed88c');
     this.setProps({
-      format: Characteristic.Formats.BOOL,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.WRITE, Characteristic.Perms.NOTIFY],
+      format: Formats.BOOL,
+      perms: [Perms.READ, Perms.WRITE, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -236,8 +235,8 @@ exports.registerWith = (hap) => {
   Characteristic.Caller = function () {
     Characteristic.call(this, 'Last Caller', 'eb0b2d83-569b-44aa-989d-190a911b4397');
     this.setProps({
-      format: Characteristic.Formats.STRING,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY],
+      format: Formats.STRING,
+      perms: [Perms.READ, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -250,8 +249,8 @@ exports.registerWith = (hap) => {
   Characteristic.Called = function () {
     Characteristic.call(this, 'Last Called', 'cf42e4a1-ff61-4aa6-9cc5-55d3c09cfbbd');
     this.setProps({
-      format: Characteristic.Formats.STRING,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY],
+      format: Formats.STRING,
+      perms: [Perms.READ, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -264,8 +263,8 @@ exports.registerWith = (hap) => {
   Characteristic.Download = function () {
     Characteristic.call(this, 'Download', '37574b8e-2d7c-47ee-8b5e-6bfc42f195d9');
     this.setProps({
-      format: Characteristic.Formats.STRING,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY],
+      format: Formats.STRING,
+      perms: [Perms.READ, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -278,8 +277,8 @@ exports.registerWith = (hap) => {
   Characteristic.Upload = function () {
     Characteristic.call(this, 'Upload', '9b2e94f7-a665-4575-9efd-1b37474d758b');
     this.setProps({
-      format: Characteristic.Formats.STRING,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY],
+      format: Formats.STRING,
+      perms: [Perms.READ, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -292,11 +291,11 @@ exports.registerWith = (hap) => {
   Characteristic.Ping = function () {
     Characteristic.call(this, 'Ping', 'ce18aaef-1026-4538-943b-026501599dc0');
     this.setProps({
-      format: Characteristic.Formats.FLOAT,
+      format: Formats.FLOAT,
       maxValue: 9999,
       minValue: 0,
       minStep: 0.1,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY],
+      perms: [Perms.READ, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };

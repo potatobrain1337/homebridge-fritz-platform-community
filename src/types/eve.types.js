@@ -3,8 +3,7 @@
 const inherits = require('util').inherits;
 
 exports.registerWith = (hap) => {
-  const Characteristic = hap.Characteristic;
-  const Service = hap.Service;
+  const { Characteristic, Service, Formats, Perms, Units } = hap;
 
   /*
    * Characteristic.ResetTotal
@@ -12,9 +11,9 @@ exports.registerWith = (hap) => {
   Characteristic.ResetTotal = function () {
     Characteristic.call(this, 'Reset Total', 'E863F112-079E-48FF-8F27-9C2605A29F52');
     this.setProps({
-      format: Characteristic.Formats.UINT32,
-      unit: Characteristic.Units.SECONDS,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY, Characteristic.Perms.WRITE],
+      format: Formats.UINT32,
+      unit: Units.SECONDS,
+      perms: [Perms.READ, Perms.NOTIFY, Perms.WRITE],
     });
     this.value = this.getDefaultValue();
   };
@@ -27,8 +26,8 @@ exports.registerWith = (hap) => {
   Characteristic.HistoryStatus = function () {
     Characteristic.call(this, 'History Status', 'E863F116-079E-48FF-8F27-9C2605A29F52');
     this.setProps({
-      format: Characteristic.Formats.DATA,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY, Characteristic.Perms.WRITE],
+      format: Formats.DATA,
+      perms: [Perms.READ, Perms.NOTIFY, Perms.WRITE],
     });
     this.value = this.getDefaultValue();
   };
@@ -41,8 +40,8 @@ exports.registerWith = (hap) => {
   Characteristic.HistoryEntries = function () {
     Characteristic.call(this, 'History Entries', 'E863F117-079E-48FF-8F27-9C2605A29F52');
     this.setProps({
-      format: Characteristic.Formats.DATA,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY, Characteristic.Perms.WRITE],
+      format: Formats.DATA,
+      perms: [Perms.READ, Perms.NOTIFY, Perms.WRITE],
     });
     this.value = this.getDefaultValue();
   };
@@ -55,8 +54,8 @@ exports.registerWith = (hap) => {
   Characteristic.HistoryRequest = function () {
     Characteristic.call(this, 'History Request', 'E863F11C-079E-48FF-8F27-9C2605A29F52');
     this.setProps({
-      format: Characteristic.Formats.DATA,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY, Characteristic.Perms.WRITE],
+      format: Formats.DATA,
+      perms: [Perms.READ, Perms.NOTIFY, Perms.WRITE],
     });
     this.value = this.getDefaultValue();
   };
@@ -69,8 +68,8 @@ exports.registerWith = (hap) => {
   Characteristic.SetTime = function () {
     Characteristic.call(this, 'Set Time', 'E863F121-079E-48FF-8F27-9C2605A29F52');
     this.setProps({
-      format: Characteristic.Formats.DATA,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY, Characteristic.Perms.WRITE],
+      format: Formats.DATA,
+      perms: [Perms.READ, Perms.NOTIFY, Perms.WRITE],
     });
     this.value = this.getDefaultValue();
   };
@@ -83,9 +82,9 @@ exports.registerWith = (hap) => {
   Characteristic.LastActivation = function () {
     Characteristic.call(this, 'Last Activation', 'E863F11A-079E-48FF-8F27-9C2605A29F52');
     this.setProps({
-      format: Characteristic.Formats.UINT32,
-      unit: Characteristic.Units.SECONDS,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY],
+      format: Formats.UINT32,
+      unit: Units.SECONDS,
+      perms: [Perms.READ, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -98,8 +97,8 @@ exports.registerWith = (hap) => {
   Characteristic.TimesOpened = function () {
     Characteristic.call(this, 'Times Opened', 'E863F129-079E-48FF-8F27-9C2605A29F52');
     this.setProps({
-      format: Characteristic.Formats.UINT32,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY],
+      format: Formats.UINT32,
+      perms: [Perms.READ, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -112,9 +111,9 @@ exports.registerWith = (hap) => {
   Characteristic.OpenDuration = function () {
     Characteristic.call(this, 'Open Duration', 'E863F118-079E-48FF-8F27-9C2605A29F52');
     this.setProps({
-      format: Characteristic.Formats.UINT32,
-      unit: Characteristic.Units.SECONDS,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY, Characteristic.Perms.WRITE],
+      format: Formats.UINT32,
+      unit: Units.SECONDS,
+      perms: [Perms.READ, Perms.NOTIFY, Perms.WRITE],
     });
     this.value = this.getDefaultValue();
   };
@@ -127,9 +126,9 @@ exports.registerWith = (hap) => {
   Characteristic.ClosedDuration = function () {
     Characteristic.call(this, 'Closed Duration', 'E863F119-079E-48FF-8F27-9C2605A29F52');
     this.setProps({
-      format: Characteristic.Formats.UINT32,
-      unit: Characteristic.Units.SECONDS,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY, Characteristic.Perms.WRITE],
+      format: Formats.UINT32,
+      unit: Units.SECONDS,
+      perms: [Perms.READ, Perms.NOTIFY, Perms.WRITE],
     });
     this.value = this.getDefaultValue();
   };
@@ -142,9 +141,9 @@ exports.registerWith = (hap) => {
   Characteristic.CurrentConsumption = function () {
     Characteristic.call(this, 'Current Consumption', 'E863F10D-079E-48FF-8F27-9C2605A29F52');
     this.setProps({
-      format: Characteristic.Formats.FLOAT,
+      format: Formats.FLOAT,
       unit: 'W',
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY],
+      perms: [Perms.READ, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -157,9 +156,9 @@ exports.registerWith = (hap) => {
   Characteristic.TotalConsumption = function () {
     Characteristic.call(this, 'Total Consumption', 'E863F10C-079E-48FF-8F27-9C2605A29F52');
     this.setProps({
-      format: Characteristic.Formats.FLOAT,
+      format: Formats.FLOAT,
       unit: 'kWh',
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY],
+      perms: [Perms.READ, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -172,9 +171,9 @@ exports.registerWith = (hap) => {
   Characteristic.Volts = function () {
     Characteristic.call(this, 'Volts', 'E863F10A-079E-48FF-8F27-9C2605A29F52');
     this.setProps({
-      format: Characteristic.Formats.FLOAT,
+      format: Formats.FLOAT,
       unit: 'V',
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY],
+      perms: [Perms.READ, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -187,9 +186,9 @@ exports.registerWith = (hap) => {
   Characteristic.Amperes = function () {
     Characteristic.call(this, 'Amperes', 'E863F126-079E-48FF-8F27-9C2605A29F52');
     this.setProps({
-      format: Characteristic.Formats.FLOAT,
+      format: Formats.FLOAT,
       unit: 'A',
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY],
+      perms: [Perms.READ, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -202,9 +201,9 @@ exports.registerWith = (hap) => {
   Characteristic.ValvePosition = function () {
     Characteristic.call(this, 'Valve Position', 'E863F12E-079E-48FF-8F27-9C2605A29F52');
     this.setProps({
-      format: Characteristic.Formats.UINT8,
-      unit: Characteristic.Units.PERCENTAGE,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY],
+      format: Formats.UINT8,
+      unit: Units.PERCENTAGE,
+      perms: [Perms.READ, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
@@ -217,8 +216,8 @@ exports.registerWith = (hap) => {
   Characteristic.ProgramCommand = function () {
     Characteristic.call(this, 'Program Command', 'E863F12C-079E-48FF-8F27-9C2605A29F52');
     this.setProps({
-      format: Characteristic.Formats.DATA,
-      perms: [Characteristic.Perms.WRITE],
+      format: Formats.DATA,
+      perms: [Perms.WRITE],
     });
     this.value = this.getDefaultValue();
   };
@@ -231,8 +230,8 @@ exports.registerWith = (hap) => {
   Characteristic.ProgramData = function () {
     Characteristic.call(this, 'Program Data', 'E863F12F-079E-48FF-8F27-9C2605A29F52');
     this.setProps({
-      format: Characteristic.Formats.DATA,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY],
+      format: Formats.DATA,
+      perms: [Perms.READ, Perms.NOTIFY],
     });
     this.value = this.getDefaultValue();
   };
