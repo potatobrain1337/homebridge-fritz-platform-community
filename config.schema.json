@@ -37,6 +37,8 @@
       }
     },
     "devices": {
+      "title": "Fritz!Box Devices",
+      "description": "Define your Fritz!Box / repeater devices. Exactly one device should be marked as \"Master Device\".",
       "type": "array",
       "items": {
         "title": "Devices",
@@ -57,7 +59,8 @@
             "title": "Host",
             "type": "string",
             "required": true,
-            "description": "FritzBox IP Address.",
+            "placeholder": "192.168.178.1",
+            "description": "Fritz!Box host (IP address or hostname).",
             "condition": {
               "functionBody": "try { return model.devices[arrayIndices[0]].active } catch(e){ return false }"
             }
@@ -66,7 +69,10 @@
             "title": "Port",
             "type": "integer",
             "placeholder": 49000,
-            "description": "Port to the TR064 Endpoint.",
+            "default": 49000,
+            "minimum": 1,
+            "maximum": 65535,
+            "description": "TR-064 port (default: 49000).",
             "condition": {
               "functionBody": "try { return model.devices[arrayIndices[0]].active } catch(e){ return false }"
             }
@@ -74,12 +80,19 @@
           "username": {
             "title": "Username",
             "type": "string",
-            "description": "Username to log in to your FritzBox."
+            "description": "Username to log in to your Fritz!Box.",
+            "condition": {
+              "functionBody": "try { return model.devices[arrayIndices[0]].active } catch(e){ return false }"
+            }
           },
           "password": {
             "title": "Password",
             "type": "string",
-            "description": "Password to log in to your FritzBox."
+            "format": "password",
+            "description": "Password to log in to your Fritz!Box.",
+            "condition": {
+              "functionBody": "try { return model.devices[arrayIndices[0]].active } catch(e){ return false }"
+            }
           },
           "ssl": {
             "title": "SSL",
@@ -102,19 +115,19 @@
             "default": false
           },
           "manufacturer": {
-            "name": "Manufacturer",
+            "title": "Manufacturer",
             "type": "string",
             "placeholder": "Fritz Box",
             "description": "Set the manufacturer name for display in the Home app."
           },
           "model": {
-            "name": "Model",
+            "title": "Model",
             "type": "string",
             "placeholder": "Fritz Box",
             "description": "Set the model for display in the Home app."
           },
           "serialNumber": {
-            "name": "Serial Number",
+            "title": "Serial Number",
             "type": "string",
             "placeholder": "SerialNumber",
             "description": "Set the serial number for display in the Home app."
@@ -410,6 +423,8 @@
       }
     },
     "presence": {
+      "title": "Presence",
+      "description": "Expose network presence as Occupancy or Motion sensors based on connected devices.",
       "type": "array",
       "items": {
         "title": "Presence",
@@ -501,6 +516,8 @@
       }
     },
     "wol": {
+      "title": "Wake on LAN",
+      "description": "Expose a Wake-on-LAN switch to wake devices by MAC address.",
       "type": "array",
       "items": {
         "title": "Wake on LAN",
@@ -531,6 +548,8 @@
       }
     },
     "smarthome": {
+      "title": "Smarthome",
+      "description": "Expose FRITZ!DECT / Smart Home devices as HomeKit accessories.",
       "type": "array",
       "items": {
         "title": "Smarthome",
@@ -788,6 +807,8 @@
       }
     },
     "network": {
+      "title": "Watch Network",
+      "description": "Monitor devices by IP/MAC address and expose their online status as sensors.",
       "type": "array",
       "items": {
         "title": "Watch Network",
@@ -843,6 +864,8 @@
       }
     },
     "childLock": {
+      "title": "Child Lock",
+      "description": "Expose parental control / child lock switches for selected device IP addresses (master device only).",
       "type": "array",
       "items": {
         "title": "Child Lock",
@@ -876,7 +899,8 @@
       }
     },
     "callmonitor": {
-      "titel": "Callmonitor",
+      "title": "Callmonitor",
+      "description": "Expose incoming/outgoing call sensors via the Fritz!Box call monitor.",
       "type": "object",
       "properties": {
         "active": {
@@ -967,7 +991,8 @@
       }
     },
     "extras": {
-      "titel": "Extras",
+      "title": "Extras",
+      "description": "Optional helpers like alarm call, reboot actions, and fallback internet modes.",
       "type": "object",
       "properties": {
         "alarm": {
@@ -976,7 +1001,7 @@
           "properties": {
             "active": {
               "title": "Active",
-              "description": "If enabled, a Alarm switch/characteristic will be exposed to Apple Home. (Your FritzBox must support VOIP to use this function)",
+              "description": "If enabled, an alarm switch/characteristic will be exposed to HomeKit. (Your Fritz!Box must support VoIP to use this function.)",
               "type": "boolean"
             },
             "duration": {
@@ -1277,13 +1302,13 @@
                   ]
                 },
                 {
-                  "title": "Internet access via mobile deactive",
+                  "title": "Internet access via mobile disabled",
                   "enum": [
                     4
                   ]
                 }
               ],
-              "description": "Because Fritzbox provides 4 options how to handle fallback, you can enter here a user defined option (1 = Internet access via mobile active, 2 = Fallback Mode for DSL, 3 = Fallback Mode for DSL/WAN, 4 = Internet access via mobile deactive) what should happen when the switch is turned on OR when the status 'ON' should be detected."
+              "description": "Select which fallback state should be applied when the switch is turned ON (1 = Internet access via mobile active, 2 = Fallback Mode for DSL, 3 = Fallback Mode for DSL/WAN, 4 = Internet access via mobile disabled)."
             },
             "offState": {
               "title": "Off State",
@@ -1311,13 +1336,13 @@
                   ]
                 },
                 {
-                  "title": "Internet access via mobile deactive",
+                  "title": "Internet access via mobile disabled",
                   "enum": [
                     4
                   ]
                 }
               ],
-              "description": "Because Fritzbox provides 4 options how to handle fallback, you can enter here a user defined option (1 = Internet access via mobile active, 2 = Fallback Mode for DSL, 3 = Fallback Mode for DSL/WAN, 4 = Internet access via mobile deactive) what should happen when the switch is turned off OR when the status 'OFF' should be detected."
+              "description": "Select which fallback state should be applied when the switch is turned OFF (1 = Internet access via mobile active, 2 = Fallback Mode for DSL, 3 = Fallback Mode for DSL/WAN, 4 = Internet access via mobile disabled)."
             },
             "accType": {
               "title": "Accessory Type",
@@ -1347,7 +1372,8 @@
       }
     },
     "options": {
-      "titel": "Options",
+      "title": "Global Options",
+      "description": "Global plugin options that affect presence helpers, reboot scripts, and polling.",
       "type": "object",
       "properties": {
         "presence": {
@@ -1402,7 +1428,7 @@
           }
         },
         "polling": {
-          "title": "Reboot",
+          "title": "Polling",
           "type": "object",
           "properties": {
             "timer": {
@@ -1410,22 +1436,22 @@
               "type": "integer",
               "placeholder": 15,
               "default": 15,
-              "description": "Timer to refresh data on background.",
+              "description": "Refresh interval for background polling (seconds).",
               "required": true
             },
             "timerSmarthomeButtons": {
               "title": "Polling Timer for Smarthome Buttons",
               "type": "integer",
               "placeholder": 5,
-              "description": "Timer to refresh data on background."
+              "description": "Refresh interval for Smart Home button polling (seconds)."
             },
             "exclude": {
               "title": "Exclude",
               "type": "array",
               "items": {
-                "title": "Name/Type/Catagory",
+                "title": "Name/Type/Category",
                 "type": "string",
-                "description": "Name/Type/Catagory of the device to exclude from polling."
+                "description": "Name/Type/Category of the device to exclude from polling."
               }
             }
           }
@@ -1433,7 +1459,8 @@
       }
     },
     "telegram": {
-      "titel": "Options",
+      "title": "Telegram",
+      "description": "Optional Telegram notifications for presence, network monitoring, call monitor, and extras.",
       "type": "object",
       "properties": {
         "active": {
@@ -1444,6 +1471,7 @@
         "token": {
           "title": "Token",
           "type": "string",
+          "format": "password",
           "description": "Telegram Bot Token.",
           "condition": {
             "functionBody": "try { return model.telegram.active } catch(e){ return false }"
@@ -1490,12 +1518,12 @@
                 "guest_in": {
                   "title": "Guest Detected",
                   "type": "string",
-                  "description": "Message if someone connected to guest wlan."
+                  "description": "Message if someone connected to guest Wi-Fi."
                 },
                 "guest_out": {
                   "title": "Guest Not Detected",
                   "type": "string",
-                  "description": "Message if no one connected to guest wlan."
+                  "description": "Message if no one connected to guest Wi-Fi."
                 }
               }
             },
