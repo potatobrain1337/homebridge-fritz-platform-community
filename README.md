@@ -1,19 +1,17 @@
 <p align="center">
-    <img src="https://github.com/SeydX/homebridge-fritz-platform/blob/master/images/fb_logo.png" height="200">
+    <img src="images/fb_logo.png" height="200">
 </p>
 
 # homebridge-fritz-platform-community (fork of homebridge-fritz-platform)
 
-[![npm](https://img.shields.io/npm/v/homebridge-fritz-platform.svg?style=flat-square)](https://www.npmjs.com/package/homebridge-fritz-platform) <!-- Original badge kept until new package is published -->
-[![npm](https://img.shields.io/npm/dt/homebridge-fritz-platform.svg?style=flat-square)](https://www.npmjs.com/package/homebridge-fritz-platform)
-[![GitHub last commit](https://img.shields.io/github/last-commit/SeydX/homebridge-fritz-platform.svg?style=flat-square)](https://github.com/SeydX/homebridge-fritz-platform)
-[![verified-by-homebridge](https://badgen.net/badge/homebridge/verified/purple)](https://github.com/homebridge/homebridge/wiki/Verified-Plugins)
+[![npm (upstream)](https://img.shields.io/npm/v/homebridge-fritz-platform.svg?label=npm%20(upstream)&style=flat-square)](https://www.npmjs.com/package/homebridge-fritz-platform) <!-- Upstream badge kept until forked npm package is published -->
+[![npm downloads (upstream)](https://img.shields.io/npm/dt/homebridge-fritz-platform.svg?label=downloads%20(upstream)&style=flat-square)](https://www.npmjs.com/package/homebridge-fritz-platform)
+[![GitHub last commit](https://img.shields.io/github/last-commit/potatobrain1337/homebridge-fritz-platform-community.svg?style=flat-square)](https://github.com/potatobrain1337/homebridge-fritz-platform-community)
 [![Discord](https://img.shields.io/discord/432663330281226270?color=728ED5&logo=discord&label=discord)](https://discord.gg/kqNCe2D)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg?style=flat-square&maxAge=2592000)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NP4T3KASWQLD8)
 
-> Community fork maintained by **potatobrain1337**. Original project by **SeydX**. Published as `homebridge-fritz-platform-community` to keep the original package intact while adding Homebridge v2 compatibility. Badges above point to the original project until the forked npm package is published. Install from npm with `npm i -g homebridge-fritz-platform-community` once released, or use the tarball directly from this fork.
+> Community fork maintained by **potatobrain1337**. Original project by **SeydX**. Published as `homebridge-fritz-platform-community` to keep the original package intact while adding Homebridge v2 compatibility. Until the forked npm package is published, install from source or use the tarball directly from this repository.
 
-**Creating and maintaining Homebridge plugins consume a lot of time and effort, if you would like to share your appreciation, feel free to "Star" or donate.** [Click here](https://github.com/SeydX) to review more of SeydX's plugins.
+Contributions and bug reports are welcome — please use the GitHub issues and pull requests in this repository.
 
 
 ## Info
@@ -107,16 +105,16 @@ See the [changelog](CHANGELOG.md) for changes between versions of this package.
 
 ## Documentation
 
-- [Supported HomeKit Apps](https://github.com/SeydX/homebridge-fritz-platform/blob/master/docs/Apps.md)
-- [Tested Devices](https://github.com/SeydX/homebridge-fritz-platform/blob/master/docs/Supported.md)
-- [Installation instruction](https://github.com/SeydX/homebridge-fritz-platform/blob/master/docs/Installation.md)
-- [First Start](https://github.com/SeydX/homebridge-fritz-platform/blob/master/docs/FirtStart.md)
-- [Configuring Callmonitor](https://github.com/SeydX/homebridge-fritz-platform/blob/master/docs/Callmonitor.md)
+- [Supported HomeKit Apps](docs/Apps.md)
+- [Tested Devices](docs/Supported.md)
+- [Installation instruction](docs/Installation.md)
+- [First Start](docs/FirtStart.md)
+- [Configuring Callmonitor](docs/Callmonitor.md)
 - <u>Examples</u>
-   * [Example config.json](https://github.com/SeydX/homebridge-fritz-platform/blob/master/example/example-config.json)
-   * [Multiple instances (for extended reboot)](https://github.com/SeydX/homebridge-fritz-platform/blob/master/example/MultipleInstances.md)
-   * [Telegram Notification instructions](https://github.com/SeydX/homebridge-fritz-platform/blob/master/docs/Telegram.md)
-- [Debugging](https://github.com/SeydX/homebridge-fritz-platform/blob/master/DEBUG.md)
+   * [Example config.json](example/example-config.json)
+   * [Multiple instances (for extended reboot)](example/MultipleInstances.md)
+   * [Telegram Notification instructions](docs/Telegram.md)
+- [Debugging](DEBUG.md)
 
 
 
