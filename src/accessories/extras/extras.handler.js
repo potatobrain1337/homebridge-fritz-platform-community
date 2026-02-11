@@ -38,7 +38,7 @@ class Handler {
       if (!this.configured) {
         logger.debug(
           'Handler not configured yet. Skipping CHANGE event.',
-          `${accessory.displayName} (${accessory.context.config.subtype})`
+          `${accessory.displayName} (${accessory.context.config.subtype})`,
         );
         return;
       }
@@ -62,7 +62,7 @@ class Handler {
         default:
           logger.warn(
             `Can not handle CHANGE event. Unknown accessory subtype (${subtype})`,
-            `${accessory.displayName} (${subtype})`
+            `${accessory.displayName} (${subtype})`,
           );
           break;
       }
@@ -73,7 +73,7 @@ class Handler {
     if (!this.configured) {
       logger.debug(
         'Handler not configured yet. Skipping GET event.',
-        `${accessory.displayName} (${accessory.context.config.subtype})`
+        `${accessory.displayName} (${accessory.context.config.subtype})`,
       );
       return false;
     }
@@ -199,7 +199,7 @@ class Handler {
       default:
         logger.warn(
           `Can not handle GET event. Unknown accessory subtype (${subtype})`,
-          `${accessory.displayName} (${subtype})`
+          `${accessory.displayName} (${subtype})`,
         );
         break;
     }
@@ -211,7 +211,7 @@ class Handler {
     if (!this.configured) {
       logger.debug(
         'Handler not configured yet. Skipping SET event.',
-        `${accessory.displayName} (${accessory.context.config.subtype})`
+        `${accessory.displayName} (${accessory.context.config.subtype})`,
       );
       return;
     }
@@ -267,7 +267,7 @@ class Handler {
           setTimeout(
             () =>
               accessory.getService(this.api.hap.Service.Switch).getCharacteristic(characteristic).updateValue(!state),
-            1000
+            1000,
           );
         }
         break;
@@ -324,7 +324,7 @@ class Handler {
 
             logger.debug(
               `Found ${books.length} phonebook(s). Fetching entries...`,
-              `${accessory.displayName} (${subtype})`
+              `${accessory.displayName} (${subtype})`,
             );
 
             for (const id of books) {
@@ -487,7 +487,7 @@ class Handler {
               } else {
                 logger.debug(
                   `Phonebook [${id}] does not contain any contacts. Skipping..`,
-                  `${accessory.displayName} (${subtype})`
+                  `${accessory.displayName} (${subtype})`,
                 );
               }
               logger.debug(`Phone book [${id}] done.`, `${accessory.displayName} (${subtype})`);
@@ -495,7 +495,7 @@ class Handler {
 
             logger.info(
               `Storing phonebook results to ${this.configPath}/fritzbox/phonebook.json`,
-              `${accessory.displayName} (${subtype})`
+              `${accessory.displayName} (${subtype})`,
             );
 
             await fs.ensureFile(`${this.configPath}/fritzbox/phonebook.json`);
@@ -504,7 +504,7 @@ class Handler {
             if (blackBook.length) {
               logger.info(
                 `Storing blackbook results to ${this.configPath}/fritzbox/blackbook.json`,
-                `${accessory.displayName} (${subtype})`
+                `${accessory.displayName} (${subtype})`,
               );
               await fs.ensureFile(`${this.configPath}/fritzbox/blackbook.json`);
               await fs.writeJson(`${this.configPath}/fritzbox/blackbook.json`, blackBook, { spaces: 2 });
@@ -518,7 +518,7 @@ class Handler {
             setTimeout(
               () =>
                 accessory.getService(this.api.hap.Service.Switch).getCharacteristic(characteristic).updateValue(false),
-              1000
+              1000,
             );
           }
         }
@@ -613,7 +613,7 @@ class Handler {
           setTimeout(
             () =>
               accessory.getService(this.api.hap.Service.Switch).getCharacteristic(characteristic).updateValue(!state),
-            1000
+            1000,
           );
         }
         break;
@@ -638,7 +638,7 @@ class Handler {
           setTimeout(
             () =>
               accessory.getService(this.api.hap.Service.Switch).getCharacteristic(characteristic).updateValue(!state),
-            1000
+            1000,
           );
         }
         break;
@@ -689,7 +689,7 @@ class Handler {
           setTimeout(
             () =>
               accessory.getService(this.api.hap.Service.Switch).getCharacteristic(characteristic).updateValue(!state),
-            1000
+            1000,
           );
         }
         break;
@@ -741,7 +741,7 @@ class Handler {
           setTimeout(
             () =>
               accessory.getService(this.api.hap.Service.Switch).getCharacteristic(characteristic).updateValue(!state),
-            1000
+            1000,
           );
         }
         break;
@@ -749,7 +749,7 @@ class Handler {
       default:
         logger.warn(
           `Can not handle SET event. Unknown accessory subtype (${subtype})`,
-          `${accessory.displayName} (${subtype})`
+          `${accessory.displayName} (${subtype})`,
         );
         break;
     }
@@ -774,7 +774,7 @@ class Handler {
     try {
       const accessories = this.accessories.filter(
         (accessory) =>
-          accessory && accessory.context && accessory.context.config && accessory.context.config.type === 'extra'
+          accessory && accessory.context && accessory.context.config && accessory.context.config.type === 'extra',
       );
 
       for (const accessory of accessories) {

@@ -16,7 +16,7 @@ class Accessory {
       this.api,
       this.accessories,
       this.accessory.context.config.polling,
-      this.meshMaster
+      this.meshMaster,
     );
 
     this.getService();
@@ -43,14 +43,14 @@ class Accessory {
       if (!batteryService) {
         logger.info(
           'Adding Battery service',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         batteryService = this.accessory.addService(this.BatteryService);
       }
 
       batteryService.setCharacteristic(
         this.api.hap.Characteristic.ChargingState,
-        this.api.hap.Characteristic.ChargingState.NOT_CHARGEABLE
+        this.api.hap.Characteristic.ChargingState.NOT_CHARGEABLE,
       );
     } else {
       if (this.accessory.getService(this.BatteryService)) {
@@ -63,18 +63,18 @@ class Accessory {
 
       let service = this.accessory.getServiceById(
         this.api.hap.Service.StatelessProgrammableSwitch,
-        `${this.accessory.context.config.subtype}-${identifier}`
+        `${this.accessory.context.config.subtype}-${identifier}`,
       );
 
       if (!service) {
         logger.info(
           `Adding StatelessProgrammableSwitch service (${this.accessory.context.config.subtype}-${identifier})`,
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service = this.accessory.addService(
           this.api.hap.Service.StatelessProgrammableSwitch,
           this.accessory.displayName,
-          `${this.accessory.context.config.subtype}-${identifier}`
+          `${this.accessory.context.config.subtype}-${identifier}`,
         );
       }
 

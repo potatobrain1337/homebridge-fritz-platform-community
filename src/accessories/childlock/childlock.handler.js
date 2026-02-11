@@ -32,7 +32,7 @@ class Handler {
     if (!this.configured) {
       logger.debug(
         'Handler not configured yet. Skipping GET event.',
-        `${accessory.displayName} (${accessory.context.config.subtype})`
+        `${accessory.displayName} (${accessory.context.config.subtype})`,
       );
       return false;
     }
@@ -53,7 +53,7 @@ class Handler {
           'GetWANAccessByIP',
           {
             NewIPv4Address: ip,
-          }
+          },
         );
         response.ip = ip;
         logger.debug(response, `${accessory.displayName} (${subtype})`);
@@ -81,7 +81,7 @@ class Handler {
     if (!this.configured) {
       logger.debug(
         'Handler not configured yet. Skipping SET event.',
-        `${accessory.displayName} (${accessory.context.config.subtype})`
+        `${accessory.displayName} (${accessory.context.config.subtype})`,
       );
       return;
     }
@@ -100,7 +100,7 @@ class Handler {
           {
             NewIPv4Address: ip,
             NewDisallow: state ? 1 : 0, //0: allow - 1: disallow
-          }
+          },
         );
       }
     } catch (err) {
@@ -113,7 +113,7 @@ class Handler {
     try {
       const accessories = this.accessories.filter(
         (accessory) =>
-          accessory && accessory.context && accessory.context.config && accessory.context.config.type === 'childlock'
+          accessory && accessory.context && accessory.context.config && accessory.context.config.type === 'childlock',
       );
 
       for (const accessory of accessories) {

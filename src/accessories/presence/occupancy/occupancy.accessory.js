@@ -29,7 +29,7 @@ class Accessory {
     if (serviceOld) {
       logger.info(
         'Removing Motion service',
-        `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+        `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
       );
       this.accessory.removeService(serviceOld);
     }
@@ -37,12 +37,12 @@ class Accessory {
     if (!service) {
       logger.info(
         'Adding Occupancy service',
-        `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+        `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
       );
       service = this.accessory.addService(
         this.api.hap.Service.OccupancySensor,
         this.accessory.displayName,
-        this.accessory.context.config.subtype
+        this.accessory.context.config.subtype,
       );
     }
 

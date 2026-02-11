@@ -34,7 +34,7 @@ class Handler {
       if (!this.configured) {
         logger.debug(
           'Handler not configured yet. Skipping CHANGE event.',
-          `${accessory.displayName} (${accessory.context.config.subtype})`
+          `${accessory.displayName} (${accessory.context.config.subtype})`,
         );
         return;
       }
@@ -59,7 +59,7 @@ class Handler {
 
         logger.info(
           'Someone connected to Guest Wifi',
-          `${accessory.displayName} (${accessory.context.config.subtype})`
+          `${accessory.displayName} (${accessory.context.config.subtype})`,
         );
       } else {
         dest = 'guest_out';
@@ -76,7 +76,7 @@ class Handler {
     if (!this.configured) {
       logger.debug(
         'Handler not configured yet. Skipping GET event.',
-        `${accessory.displayName} (${accessory.context.config.subtype})`
+        `${accessory.displayName} (${accessory.context.config.subtype})`,
       );
       return accessory.context.config.subtype === 'motion' ? false : 0;
     }
@@ -98,7 +98,7 @@ class Handler {
 
     const response = await this.fritzbox.exec(
       `urn:WLANConfiguration-com:serviceId:WLANConfiguration${this.wifiUnitGuest}`,
-      'GetTotalAssociations'
+      'GetTotalAssociations',
     );
 
     logger.debug(response, `${accessory.displayName} (${subtype})`);

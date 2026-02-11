@@ -19,13 +19,13 @@ const Setup = (devices, presenceConfig, presenceOptions) => {
     } else if (user.name === 'Anyone') {
       logger.warn(
         'One of the PRESENCE devices is called "Anyone". Please change name of this device! This device will be skipped.',
-        user.name
+        user.name,
       );
       error = true;
     } else if (!user.address) {
       logger.warn(
         'There is no or no valid IP/MAC address configured for this PRESENCE device. This device will be skipped.',
-        user.name
+        user.name,
       );
       error = true;
     }
@@ -59,7 +59,7 @@ const Setup = (devices, presenceConfig, presenceOptions) => {
     if (devices.has(uuid)) {
       logger.warn(
         'Multiple devices are configured with this name. Duplicate devices will be skipped.',
-        anyoneConfig.name
+        anyoneConfig.name,
       );
     } else {
       logger.debug('New device added!', anyoneConfig.name);
@@ -82,7 +82,7 @@ const Setup = (devices, presenceConfig, presenceOptions) => {
     if (devices.has(uuid)) {
       logger.warn(
         'Multiple devices are configured with this name. Duplicate devices will be skipped.',
-        guestConfig.name
+        guestConfig.name,
       );
     } else {
       logger.debug('New device added!', guestConfig.name);

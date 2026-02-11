@@ -1,0 +1,12 @@
+# Gitleaks-Konfiguration für Secret Scanning
+# https://github.com/gitleaks/gitleaks
+# Beispiel- und Dokumentationsdateien enthalten nur Platzhalter (YOUR_..., REPLACE_...).
+
+title = "homebridge-fritz-platform-community"
+
+[allowlist]
+description = "Beispiel-Config und Doku mit Platzhaltern"
+paths = [
+  '''example/example-config\.json''',
+  '''docs/Telegram\.md''',
+]

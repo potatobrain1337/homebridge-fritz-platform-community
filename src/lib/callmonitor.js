@@ -30,7 +30,7 @@ class Callmonitor {
     logger.debug('Connecting to Callmonitor...');
 
     this.client = net.createConnection(this.port, this.ip, () =>
-      logger.info(`Callmonitor connection established with ${this.ip}:${this.port}`)
+      logger.info(`Callmonitor connection established with ${this.ip}:${this.port}`),
     );
 
     this.client.on('error', (error) => {

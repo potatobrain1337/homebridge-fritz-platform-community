@@ -58,7 +58,7 @@ const Setup = (devices, routerConfig, extrasConfig, optionsConfig, meshMaster) =
           if (devices.has(uuidSwitch)) {
             logger.warn(
               'Multiple devices are configured with this name. Duplicate devices will be skipped.',
-              extraSwitch.name
+              extraSwitch.name,
             );
           } else {
             logger.debug('New device added!', extraSwitch.name);

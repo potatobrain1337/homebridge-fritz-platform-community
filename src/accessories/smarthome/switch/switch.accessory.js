@@ -23,7 +23,7 @@ class Accessory {
     if (serviceOld) {
       logger.info(
         'Removing Outlet service',
-        `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+        `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
       );
       this.accessory.removeService(serviceOld);
     }
@@ -33,7 +33,7 @@ class Accessory {
       service = this.accessory.addService(
         this.api.hap.Service.Switch,
         this.accessory.displayName,
-        this.accessory.context.config.subtype
+        this.accessory.context.config.subtype,
       );
     }
 
@@ -45,7 +45,7 @@ class Accessory {
       service.getCharacteristic(this.api.hap.Characteristic.On).onSet((state) => {
         logger.info(
           'Changing state not allowed - "readOnly" is active!',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         setTimeout(() => service.getCharacteristic(this.api.hap.Characteristic.On).updateValue(!state), 1000);
       });

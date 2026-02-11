@@ -35,7 +35,7 @@ class Handler {
       if (!this.configured) {
         logger.debug(
           'Handler not configured yet. Skipping CHANGE event.',
-          `${accessory.displayName} (${accessory.context.config.subtype})`
+          `${accessory.displayName} (${accessory.context.config.subtype})`,
         );
         return;
       }
@@ -72,7 +72,7 @@ class Handler {
     if (!this.configured) {
       logger.debug(
         'Handler not configured yet. Skipping GET event.',
-        `${accessory.displayName} (${accessory.context.config.subtype})`
+        `${accessory.displayName} (${accessory.context.config.subtype})`,
       );
       return accessory.context.config.subtype === 'motion' ? false : 0;
     }
@@ -98,7 +98,7 @@ class Handler {
           (accessory) =>
             accessory.context.config.type === 'presence' &&
             accessory.displayName !== 'Anyone' &&
-            accessory.displayName !== 'Guest'
+            accessory.displayName !== 'Guest',
         )
         .map((accessory) => {
           const service2 =
@@ -124,7 +124,7 @@ class Handler {
       let newState = oldState;
 
       const host = this.hosts.find(
-        (host) => host.ip === accessory.context.config.address || host.mac === accessory.context.config.address
+        (host) => host.ip === accessory.context.config.address || host.mac === accessory.context.config.address,
       );
 
       if (host) {
@@ -158,14 +158,14 @@ class Handler {
 
                   logger.debug(
                     'Taking the value of Ping. (DETECTED - THRESHOLD REACHED)',
-                    `${accessory.displayName} (${subtype})`
+                    `${accessory.displayName} (${subtype})`,
                   );
                 } else {
                   newState = false;
 
                   logger.debug(
                     'Taking the value of Ping. (NOT DETECTED - THRESHOLD NOT REACHED)',
-                    `${accessory.displayName} (${subtype})`
+                    `${accessory.displayName} (${subtype})`,
                   );
                 }
               }
@@ -195,12 +195,12 @@ class Handler {
 
             logger.info(
               `Occupancy state changed to ${newState ? 'DETECTED' : 'NOT DETECTED'}`,
-              `${accessory.displayName} (${subtype})`
+              `${accessory.displayName} (${subtype})`,
             );
 
             logger.info(
               `Wait ${newState ? onDelay : offDelay}s before switching state!`,
-              `${accessory.displayName} (${subtype})`
+              `${accessory.displayName} (${subtype})`,
             );
           }
         } else {
@@ -209,7 +209,7 @@ class Handler {
 
             logger.info(
               `Occupancy state switched back to ${newState ? 'DETECTED' : 'NOT DETECTED'}`,
-              `${accessory.displayName} (${subtype})`
+              `${accessory.displayName} (${subtype})`,
             );
           }
         }
@@ -242,20 +242,20 @@ class Handler {
             accessory.context &&
             accessory.context.config.type === 'presence' &&
             accessory.displayName !== 'Anyone' &&
-            accessory.displayName !== 'Guest'
+            accessory.displayName !== 'Guest',
         );
 
         for (const accessory of userAccessories) {
           const host = this.hosts.find(
             (host) =>
               host.ip === accessory.context.config.address ||
-              host.mac.toLowerCase() === accessory.context.config.address.toLowerCase()
+              host.mac.toLowerCase() === accessory.context.config.address.toLowerCase(),
           );
 
           if (!host) {
             logger.debug(
               'User could not be found in hosts list. Looking for user manually.',
-              `${accessory.displayName} (${accessory.context.config.subtype})`
+              `${accessory.displayName} (${accessory.context.config.subtype})`,
             );
 
             try {
@@ -280,7 +280,7 @@ class Handler {
               if (err.soap && err.soap.errorDescription === 'NoSuchEntryInArray') {
                 logger.debug(
                   'User could not be found manually. Setting user to inactive.',
-                  `${accessory.displayName} (${accessory.context.config.subtype})`
+                  `${accessory.displayName} (${accessory.context.config.subtype})`,
                 );
 
                 this.hosts.push({
@@ -300,7 +300,7 @@ class Handler {
         }
 
         const anyoneAccessory = this.accessories.find(
-          (accessory) => accessory.context.config.type === 'presence' && accessory.displayName === 'Anyone'
+          (accessory) => accessory.context.config.type === 'presence' && accessory.displayName === 'Anyone',
         );
 
         if (anyoneAccessory) {

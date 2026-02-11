@@ -30,7 +30,7 @@ const Setup = (devices, callmonitorConfig) => {
       if (devices.has(uuidGroup)) {
         logger.warn(
           'Multiple devices are configured with this name. Duplicate devices will be skipped.',
-          deviceGroup.name
+          deviceGroup.name,
         );
       } else {
         logger.debug('New device added!', deviceGroup.name);
@@ -55,7 +55,7 @@ const Setup = (devices, callmonitorConfig) => {
       if (devices.has(uuidIncoming)) {
         logger.warn(
           'Multiple devices are configured with this name. Duplicate devices will be skipped.',
-          deviceIncoming.name
+          deviceIncoming.name,
         );
       } else {
         logger.debug('New device added!', deviceIncoming.name);
@@ -65,7 +65,7 @@ const Setup = (devices, callmonitorConfig) => {
       if (devices.has(uuidOutgoing)) {
         logger.warn(
           'Multiple devices are configured with this name. Duplicate devices will be skipped.',
-          deviceOutgoing.name
+          deviceOutgoing.name,
         );
       } else {
         logger.debug('New device added!', deviceOutgoing.name);

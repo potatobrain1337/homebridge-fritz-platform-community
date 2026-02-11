@@ -20,7 +20,7 @@ const Setup = (networkConfig, meshMaster) => {
     } else if (!device.address) {
       logger.warn(
         'There is no or no valid address configured for this NETWORK device. This device will be skipped.',
-        device.name
+        device.name,
       );
       error = true;
     }

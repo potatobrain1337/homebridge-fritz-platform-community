@@ -17,7 +17,7 @@ const Setup = (devices, wolConfig) => {
     } else if (!device.address) {
       logger.warn(
         'There is no or no valid MAC address configured for this WOL device. This device will be skipped.',
-        device.name
+        device.name,
       );
       error = true;
     }

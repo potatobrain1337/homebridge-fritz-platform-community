@@ -29,7 +29,7 @@ class Accessory {
       service = this.accessory.addService(
         this.api.hap.Service.ContactSensor,
         this.accessory.displayName,
-        this.accessory.context.config.subtype
+        this.accessory.context.config.subtype,
       );
     }
 
@@ -39,14 +39,14 @@ class Accessory {
       if (!batteryService) {
         logger.info(
           'Adding Battery service',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         batteryService = this.accessory.addService(this.BatteryService);
       }
 
       batteryService.setCharacteristic(
         this.api.hap.Characteristic.ChargingState,
-        this.api.hap.Characteristic.ChargingState.NOT_CHARGEABLE
+        this.api.hap.Characteristic.ChargingState.NOT_CHARGEABLE,
       );
     } else {
       if (this.accessory.getService(this.BatteryService)) {
@@ -112,9 +112,12 @@ class Accessory {
       status: state ? 1 : 0,
     });
 
-    setTimeout(() => {
-      this.refreshHistory(service);
-    }, 10 * 60 * 1000);
+    setTimeout(
+      () => {
+        this.refreshHistory(service);
+      },
+      10 * 60 * 1000,
+    );
   }
 }
 

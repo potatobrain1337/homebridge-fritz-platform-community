@@ -39,10 +39,10 @@ const Config = (routerConfig, extrasConfig, optionsConfig) => {
     options: routerConfig.options || {},
     extras: extrasConfig,
     characteristics: Object.keys(routerConfig.options || {}).filter(
-      (option) => validOptionCharacteristics.includes(option) && routerConfig.options[option] === 'characteristic'
+      (option) => validOptionCharacteristics.includes(option) && routerConfig.options[option] === 'characteristic',
     ),
     switches: Object.keys(routerConfig.options || {}).filter(
-      (option) => validOptionsSwitches.includes(option) && routerConfig.options[option] === 'switch'
+      (option) => validOptionsSwitches.includes(option) && routerConfig.options[option] === 'switch',
     ),
     reboot: optionsConfig.reboot,
   };

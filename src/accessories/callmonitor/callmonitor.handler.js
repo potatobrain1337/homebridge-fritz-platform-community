@@ -45,7 +45,7 @@ class Handler {
       if (!this.configured) {
         logger.debug(
           'Handler not configured yet. Skipping CHANGE event.',
-          `${accessory.displayName} (${accessory.context.config.subtype})`
+          `${accessory.displayName} (${accessory.context.config.subtype})`,
         );
         return;
       }
@@ -97,7 +97,7 @@ class Handler {
           'callmonitor',
           dest,
           this.callerName ? `${this.callerName} (${this.callerNr})` : this.callerNr,
-          this.homeNr
+          this.homeNr,
         );
       }
     }
@@ -108,7 +108,7 @@ class Handler {
     if (!this.configured) {
       logger.debug(
         'Handler not configured yet. Skipping GET event.',
-        `${accessory.displayName} (${accessory.context.config.subtype})`
+        `${accessory.displayName} (${accessory.context.config.subtype})`,
       );
       return 0;
     }
@@ -230,7 +230,7 @@ class Handler {
           ) {
             logger.debug(
               '"incomingFrom" nr matched!',
-              `${accessory.displayName} (${accessory.context.config.subtype})`
+              `${accessory.displayName} (${accessory.context.config.subtype})`,
             );
             logger.info(text, `${accessory.displayName} (${accessory.context.config.subtype})`);
 
@@ -245,7 +245,7 @@ class Handler {
               `"incomingFrom" nr not matched. Receiving new call from ${
                 this.callerName ? this.callerName + ' (' + this.callerNr + ')' : this.callerNr
               } to ${this.homeNr}`,
-              `${accessory.displayName} (${accessory.context.config.subtype})`
+              `${accessory.displayName} (${accessory.context.config.subtype})`,
             );
 
             this.denyCall = true;
@@ -258,7 +258,7 @@ class Handler {
             ) {
               logger.debug(
                 '"incomingTo" nr matched!',
-                `${accessory.displayName} (${accessory.context.config.subtype})`
+                `${accessory.displayName} (${accessory.context.config.subtype})`,
               );
               logger.info(text, `${accessory.displayName} (${accessory.context.config.subtype})`);
 
@@ -267,7 +267,7 @@ class Handler {
                   `Blocking notification for ${
                     this.callerName ? this.callerName + ' (' + this.callerNr + ')' : this.callerNr
                   }`,
-                  `${accessory.displayName} (${accessory.context.config.subtype})`
+                  `${accessory.displayName} (${accessory.context.config.subtype})`,
                 );
 
                 return;
@@ -283,7 +283,7 @@ class Handler {
                 `"incomingTo" nr not matched. Receiving new call from ${
                   this.callerName ? this.callerName + ' (' + this.callerNr + ')' : this.callerNr
                 } to ${this.homeNr}`,
-                `${accessory.displayName} (${accessory.context.config.subtype})`
+                `${accessory.displayName} (${accessory.context.config.subtype})`,
               );
             }
           } else {
@@ -291,7 +291,7 @@ class Handler {
               `Receiving new call from ${
                 this.callerName ? this.callerName + ' (' + this.callerNr + ')' : this.callerNr
               } to ${this.homeNr}`,
-              `${accessory.displayName} (${accessory.context.config.subtype})`
+              `${accessory.displayName} (${accessory.context.config.subtype})`,
             );
 
             this.from = { caller: this.callerNr };
@@ -360,14 +360,14 @@ class Handler {
           ) {
             logger.debug(
               '"outgoingFrom" nr matched!',
-              `${accessory.displayName} (${accessory.context.config.subtype})`
+              `${accessory.displayName} (${accessory.context.config.subtype})`,
             );
             logger.info(text, `${accessory.displayName} (${accessory.context.config.subtype})`);
 
             if (this.denyCall) {
               logger.debug(
                 `Blocking notification for ${this.homeNr}`,
-                `${accessory.displayName} (${accessory.context.config.subtype})`
+                `${accessory.displayName} (${accessory.context.config.subtype})`,
               );
 
               return;
@@ -383,7 +383,7 @@ class Handler {
               `"outgoingFrom" nr not matched. Calling from ${this.homeNr} to ${
                 this.callerName ? this.callerName + ' (' + this.callerNr + ')' : this.callerNr
               }`,
-              `${accessory.displayName} (${accessory.context.config.subtype})`
+              `${accessory.displayName} (${accessory.context.config.subtype})`,
             );
           }
         } else {
@@ -391,7 +391,7 @@ class Handler {
             `Calling from ${this.homeNr} to ${
               this.callerName ? this.callerName + ' (' + this.callerNr + ')' : this.callerNr
             }`,
-            `${accessory.displayName} (${accessory.context.config.subtype})`
+            `${accessory.displayName} (${accessory.context.config.subtype})`,
           );
 
           this.from = { called: this.callerNr };
@@ -417,7 +417,7 @@ class Handler {
             `Connection established between: ${this.homeNr} and ${
               this.callerName ? this.callerName + ' (' + this.callerNr + ')' : this.callerNr
             }`,
-            `${accessory.displayName} (${accessory.context.config.subtype})`
+            `${accessory.displayName} (${accessory.context.config.subtype})`,
           );
         }
       }
@@ -443,7 +443,7 @@ class Handler {
                 `Call disconnected with ${
                   this.callerName ? this.callerName + ' (' + this.callerNr + ')' : this.callerNr
                 }`,
-                `${accessory.displayName} (${accessory.context.config.subtype})`
+                `${accessory.displayName} (${accessory.context.config.subtype})`,
               );
 
               if (this.denyCall) {
@@ -451,7 +451,7 @@ class Handler {
                   `Blocking notification for ${
                     this.callerName ? this.callerName + ' (' + this.callerNr + ')' : this.callerNr
                   }`,
-                  `${accessory.displayName} (${accessory.context.config.subtype})`
+                  `${accessory.displayName} (${accessory.context.config.subtype})`,
                 );
 
                 return;
@@ -469,7 +469,7 @@ class Handler {
                 } nr not matched. Call disconnected with ${
                   this.callerName ? this.callerName + ' (' + this.callerNr + ')' : this.callerNr
                 }`,
-                `${accessory.displayName} (${accessory.context.config.subtype})`
+                `${accessory.displayName} (${accessory.context.config.subtype})`,
               );
             }
           } else {
@@ -477,7 +477,7 @@ class Handler {
               `Call disconnected with ${
                 this.callerName ? this.callerName + ' (' + this.callerNr + ')' : this.callerNr
               }`,
-              `${accessory.displayName} (${accessory.context.config.subtype})`
+              `${accessory.displayName} (${accessory.context.config.subtype})`,
             );
 
             this.from = {};

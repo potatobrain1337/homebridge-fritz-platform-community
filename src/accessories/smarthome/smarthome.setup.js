@@ -18,19 +18,19 @@ const Setup = (devices, smarthomeConfig) => {
       } else if (!device.ain) {
         logger.warn(
           'There is no "ain" configured for this SMARTHOME device. This device will be skipped.',
-          device.name
+          device.name,
         );
         error = true;
       } else if (!device.accType) {
         logger.warn(
           'There is no or no valid "accType" configured for this SMARTHOME device. This device will be skipped.',
-          device.name
+          device.name,
         );
         error = true;
       } else if (device.accType === 'button' && !device.buttons && !device.temperature && !device.humidity) {
         logger.warn(
           'There is no or no valid "buttons" configured for this SMARTHOME device. This device will be skipped.',
-          device.name
+          device.name,
         );
         error = true;
       }
@@ -43,7 +43,7 @@ const Setup = (devices, smarthomeConfig) => {
       } else if (!device.accTypeGroup) {
         logger.warn(
           'There is no or no valid "accTypeGroup" configured for this grouped SMARTHOME device. This device will be skipped.',
-          device.name
+          device.name,
         );
         error = true;
       }
@@ -78,7 +78,7 @@ const Setup = (devices, smarthomeConfig) => {
           if (devices.has(uuidTemp)) {
             logger.warn(
               'Multiple devices are configured with this name. Duplicate devices will be skipped.',
-              tempDevice.name
+              tempDevice.name,
             );
           } else {
             logger.debug('New device added!', tempDevice.name);
@@ -102,7 +102,7 @@ const Setup = (devices, smarthomeConfig) => {
           if (devices.has(uuidTemp)) {
             logger.warn(
               'Multiple devices are configured with this name. Duplicate devices will be skipped.',
-              humidityDevice.name
+              humidityDevice.name,
             );
           } else {
             logger.debug('New device added!', humidityDevice.name);
@@ -124,7 +124,7 @@ const Setup = (devices, smarthomeConfig) => {
             if (devices.has(uuidWindow)) {
               logger.warn(
                 'Multiple devices are configured with this name. Duplicate devices will be skipped.',
-                windowDevice.name
+                windowDevice.name,
               );
             } else {
               logger.debug('New device added!', windowDevice.name);
@@ -144,7 +144,7 @@ const Setup = (devices, smarthomeConfig) => {
             if (devices.has(uuidWindow)) {
               logger.warn(
                 'Multiple devices are configured with this name. Duplicate devices will be skipped.',
-                openWindowDevice.name
+                openWindowDevice.name,
               );
             } else {
               logger.debug('New device added!', openWindowDevice.name);

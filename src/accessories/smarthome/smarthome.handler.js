@@ -38,7 +38,7 @@ class Handler {
       if (!this.configured) {
         logger.debug(
           'Handler not configured yet. Skipping CHANGE event.',
-          `${accessory.displayName} (${accessory.context.config.subtype})`
+          `${accessory.displayName} (${accessory.context.config.subtype})`,
         );
         return;
       }
@@ -213,7 +213,7 @@ class Handler {
         default:
           logger.warn(
             `Can not handle CHANGE event. Unknown accessory subtype (${subtype})`,
-            `${accessory.displayName} (${subtype})`
+            `${accessory.displayName} (${subtype})`,
           );
           break;
       }
@@ -225,7 +225,7 @@ class Handler {
     if (!this.configured) {
       logger.debug(
         'Handler not configured yet. Skipping GET event.',
-        `${accessory.displayName} (${accessory.context.config.subtype})`
+        `${accessory.displayName} (${accessory.context.config.subtype})`,
       );
       return;
     }
@@ -313,7 +313,7 @@ class Handler {
                   } else {
                     logger.warn(
                       'Can not find powermeter data - "accType" and/or options correct?',
-                      `${accessory.displayName} (${subtype})`
+                      `${accessory.displayName} (${subtype})`,
                     );
                   }
                 }
@@ -331,7 +331,7 @@ class Handler {
                 } else {
                   logger.warn(
                     'Can not find brightness data - "accType" and/or options correct?',
-                    `${accessory.displayName} (${subtype})`
+                    `${accessory.displayName} (${subtype})`,
                   );
                 }
 
@@ -344,13 +344,13 @@ class Handler {
                 } else {
                   logger.warn(
                     'Can not find color data - "accType" and/or options correct?',
-                    `${accessory.displayName} (${subtype})`
+                    `${accessory.displayName} (${subtype})`,
                   );
                 }
               } else {
                 logger.warn(
                   'Can not find light data - "accType" and/or options correct?',
-                  `${accessory.displayName} (${subtype})`
+                  `${accessory.displayName} (${subtype})`,
                 );
               }
 
@@ -360,7 +360,7 @@ class Handler {
                 } else {
                   logger.warn(
                     'Can not find temperature data - "accType" and/or options correct?',
-                    `${accessory.displayName} (${subtype})`
+                    `${accessory.displayName} (${subtype})`,
                   );
                 }
               }
@@ -370,7 +370,7 @@ class Handler {
           } else {
             logger.warn(
               `Can not find device with AIN: ${accessory.context.config.ain}`,
-              `${accessory.displayName} (${subtype})`
+              `${accessory.displayName} (${subtype})`,
             );
           }
         } catch (err) {
@@ -497,7 +497,7 @@ class Handler {
                   } else {
                     logger.warn(
                       'Can not find brightness data - "accType" and/or options correct?',
-                      `${accessory.displayName} (${subtype})`
+                      `${accessory.displayName} (${subtype})`,
                     );
                   }
                 }
@@ -510,14 +510,14 @@ class Handler {
                   } else {
                     logger.warn(
                       'Can not find color data - "accType" and/or options correct?',
-                      `${accessory.displayName} (${subtype})`
+                      `${accessory.displayName} (${subtype})`,
                     );
                   }
                 }
               } else {
                 logger.warn(
                   'Can not find light data - "accType" and/or options correct?',
-                  `${accessory.displayName} (${subtype})`
+                  `${accessory.displayName} (${subtype})`,
                 );
               }
             } else {
@@ -526,7 +526,7 @@ class Handler {
           } else {
             logger.warn(
               `Can not find device with AIN: ${accessory.context.config.ain}`,
-              `${accessory.displayName} (${subtype})`
+              `${accessory.displayName} (${subtype})`,
             );
           }
         } catch (err) {
@@ -653,14 +653,14 @@ class Handler {
                   } else {
                     logger.warn(
                       'Can not find powermeter data - "accType" and/or options correct?',
-                      `${accessory.displayName} (${subtype})`
+                      `${accessory.displayName} (${subtype})`,
                     );
                   }
                 }
               } else {
                 logger.warn(
                   'Can not find switch data - "accType" and/or options correct?',
-                  `${accessory.displayName} (${subtype})`
+                  `${accessory.displayName} (${subtype})`,
                 );
               }
             } else {
@@ -669,7 +669,7 @@ class Handler {
           } else {
             logger.warn(
               `Can not find device with AIN: ${accessory.context.config.ain}`,
-              `${accessory.displayName} (${subtype})`
+              `${accessory.displayName} (${subtype})`,
             );
           }
         } catch (err) {
@@ -704,7 +704,7 @@ class Handler {
               } else {
                 logger.warn(
                   'Can not find humidity data - "accType" and/or options correct?',
-                  `${accessory.displayName} (${subtype})`
+                  `${accessory.displayName} (${subtype})`,
                 );
               }
 
@@ -725,7 +725,7 @@ class Handler {
                 } else {
                   logger.warn(
                     'Can not find battery data - "accType" and/or options correct?',
-                    `${accessory.displayName} (${subtype})`
+                    `${accessory.displayName} (${subtype})`,
                   );
                 }
               }
@@ -735,7 +735,7 @@ class Handler {
           } else {
             logger.warn(
               `Can not find device with AIN: ${accessory.context.config.ain}`,
-              `${accessory.displayName} (${subtype})`
+              `${accessory.displayName} (${subtype})`,
             );
           }
         } catch (err) {
@@ -768,7 +768,7 @@ class Handler {
               } else {
                 logger.warn(
                   'Can not find temperature data - "accType" and/or options correct?',
-                  `${accessory.displayName} (${subtype})`
+                  `${accessory.displayName} (${subtype})`,
                 );
               }
 
@@ -789,7 +789,7 @@ class Handler {
                 } else {
                   logger.warn(
                     'Can not find battery data - "accType" and/or options correct?',
-                    `${accessory.displayName} (${subtype})`
+                    `${accessory.displayName} (${subtype})`,
                   );
                 }
               }
@@ -799,7 +799,7 @@ class Handler {
           } else {
             logger.warn(
               `Can not find device with AIN: ${accessory.context.config.ain}`,
-              `${accessory.displayName} (${subtype})`
+              `${accessory.displayName} (${subtype})`,
             );
           }
         } catch (err) {
@@ -832,7 +832,7 @@ class Handler {
               } else {
                 logger.warn(
                   'Can not find alert data - "accType" and/or options correct?',
-                  `${accessory.displayName} (${subtype})`
+                  `${accessory.displayName} (${subtype})`,
                 );
               }
 
@@ -853,7 +853,7 @@ class Handler {
                 } else {
                   logger.warn(
                     'Can not find battery data - "accType" and/or options correct?',
-                    `${accessory.displayName} (${subtype})`
+                    `${accessory.displayName} (${subtype})`,
                   );
                 }
               }
@@ -863,7 +863,7 @@ class Handler {
           } else {
             logger.warn(
               `Can not find device with AIN: ${accessory.context.config.ain}`,
-              `${accessory.displayName} (${subtype})`
+              `${accessory.displayName} (${subtype})`,
             );
           }
         } catch (err) {
@@ -896,7 +896,7 @@ class Handler {
               } else {
                 logger.warn(
                   'Can not find thermostat data - "accType" and/or options correct?',
-                  `${accessory.displayName} (${subtype})`
+                  `${accessory.displayName} (${subtype})`,
                 );
               }
 
@@ -917,7 +917,7 @@ class Handler {
                 } else {
                   logger.warn(
                     'Can not find battery data - "accType" and/or options correct?',
-                    `${accessory.displayName} (${subtype})`
+                    `${accessory.displayName} (${subtype})`,
                   );
                 }
               }
@@ -927,7 +927,7 @@ class Handler {
           } else {
             logger.warn(
               `Can not find device with AIN: ${accessory.context.config.ain}`,
-              `${accessory.displayName} (${subtype})`
+              `${accessory.displayName} (${subtype})`,
             );
           }
         } catch (err) {
@@ -960,7 +960,7 @@ class Handler {
               } else {
                 logger.warn(
                   'Can not find thermostat data - "accType" and/or options correct?',
-                  `${accessory.displayName} (${subtype})`
+                  `${accessory.displayName} (${subtype})`,
                 );
               }
             } else {
@@ -969,7 +969,7 @@ class Handler {
           } else {
             logger.warn(
               `Can not find device with AIN: ${accessory.context.config.ain}`,
-              `${accessory.displayName} (${subtype})`
+              `${accessory.displayName} (${subtype})`,
             );
           }
         } catch (err) {
@@ -1046,7 +1046,7 @@ class Handler {
                         currentState = this.api.hap.Characteristic.CurrentHeaterCoolerState.HEATING;
 
                         let valvePos = Math.round(
-                          targetTemp - currentTemp >= 5 ? 100 : (targetTemp - currentTemp) * 20
+                          targetTemp - currentTemp >= 5 ? 100 : (targetTemp - currentTemp) * 20,
                         );
 
                         accessory
@@ -1088,7 +1088,7 @@ class Handler {
               } else {
                 logger.warn(
                   'Can not find thermostat data - "accType" and/or options correct?',
-                  `${accessory.displayName} (${subtype})`
+                  `${accessory.displayName} (${subtype})`,
                 );
               }
 
@@ -1109,7 +1109,7 @@ class Handler {
                 } else {
                   logger.warn(
                     'Can not find battery data - "accType" and/or options correct?',
-                    `${accessory.displayName} (${subtype})`
+                    `${accessory.displayName} (${subtype})`,
                   );
                 }
               }
@@ -1119,7 +1119,7 @@ class Handler {
           } else {
             logger.warn(
               `Can not find device with AIN: ${accessory.context.config.ain}`,
-              `${accessory.displayName} (${subtype})`
+              `${accessory.displayName} (${subtype})`,
             );
           }
         } catch (err) {
@@ -1153,7 +1153,7 @@ class Handler {
               } else {
                 logger.warn(
                   'Can not find position data - "accType" and/or options correct?',
-                  `${accessory.displayName} (${subtype})`
+                  `${accessory.displayName} (${subtype})`,
                 );
               }
             } else {
@@ -1162,7 +1162,7 @@ class Handler {
           } else {
             logger.warn(
               `Can not find device with AIN: ${accessory.context.config.ain}`,
-              `${accessory.displayName} (${subtype})`
+              `${accessory.displayName} (${subtype})`,
             );
           }
         } catch (err) {
@@ -1200,7 +1200,7 @@ class Handler {
               } else {
                 logger.warn(
                   'Can not find alert data - "accType" and/or options correct?',
-                  `${accessory.displayName} (${subtype})`
+                  `${accessory.displayName} (${subtype})`,
                 );
               }
 
@@ -1221,7 +1221,7 @@ class Handler {
                 } else {
                   logger.warn(
                     'Can not find battery data - "accType" and/or options correct?',
-                    `${accessory.displayName} (${subtype})`
+                    `${accessory.displayName} (${subtype})`,
                   );
                 }
               }
@@ -1231,7 +1231,7 @@ class Handler {
           } else {
             logger.warn(
               `Can not find device with AIN: ${accessory.context.config.ain}`,
-              `${accessory.displayName} (${subtype})`
+              `${accessory.displayName} (${subtype})`,
             );
           }
         } catch (err) {
@@ -1249,7 +1249,7 @@ class Handler {
       default:
         logger.warn(
           `Can not handle GET event. Unknown accessory subtype (${subtype})`,
-          `${accessory.displayName} (${subtype})`
+          `${accessory.displayName} (${subtype})`,
         );
         break;
     }
@@ -1260,7 +1260,7 @@ class Handler {
     if (!this.configured) {
       logger.debug(
         'Handler not configured yet. Skipping SET event.',
-        `${accessory.displayName} (${accessory.context.config.subtype})`
+        `${accessory.displayName} (${accessory.context.config.subtype})`,
       );
       return;
     }
@@ -1277,7 +1277,7 @@ class Handler {
           try {
             const response = await this.fritzbox.exec(
               'urn:DeviceConfig-com:serviceId:DeviceConfig1',
-              'X_AVM-DE_CreateUrlSID'
+              'X_AVM-DE_CreateUrlSID',
             );
             const sid = response['NewX_AVM-DE_UrlSID'].split('sid=')[1];
 
@@ -1335,7 +1335,7 @@ class Handler {
 
                 logger.info(
                   `Color Temperature ${validColorTemperatureKelvin} Kelvin`,
-                  `${accessory.displayName} (${subtype})`
+                  `${accessory.displayName} (${subtype})`,
                 );
 
                 cmd = {
@@ -1370,7 +1370,7 @@ class Handler {
 
                 logger.info(
                   `Hue ${hue} (${validHueSat.hue}) - Saturation ${state} (${validHueSat.sat})`,
-                  `${accessory.displayName} (${subtype})`
+                  `${accessory.displayName} (${subtype})`,
                 );
 
                 cmd = {
@@ -1404,7 +1404,7 @@ class Handler {
           try {
             const response = await this.fritzbox.exec(
               'urn:DeviceConfig-com:serviceId:DeviceConfig1',
-              'X_AVM-DE_CreateUrlSID'
+              'X_AVM-DE_CreateUrlSID',
             );
             const sid = response['NewX_AVM-DE_UrlSID'].split('sid=')[1];
 
@@ -1461,7 +1461,7 @@ class Handler {
 
                 logger.info(
                   `Color Temperature ${validColorTemperatureKelvin} Kelvin`,
-                  `${accessory.displayName} (${subtype})`
+                  `${accessory.displayName} (${subtype})`,
                 );
 
                 cmd = {
@@ -1496,7 +1496,7 @@ class Handler {
 
                 logger.info(
                   `Hue ${hue} (${validHueSat.hue}) - Saturation ${state} (${validHueSat.sat})`,
-                  `${accessory.displayName} (${subtype})`
+                  `${accessory.displayName} (${subtype})`,
                 );
 
                 cmd = {
@@ -1528,7 +1528,7 @@ class Handler {
 
             const response = await this.fritzbox.exec(
               'urn:DeviceConfig-com:serviceId:DeviceConfig1',
-              'X_AVM-DE_CreateUrlSID'
+              'X_AVM-DE_CreateUrlSID',
             );
             const sid = response['NewX_AVM-DE_UrlSID'].split('sid=')[1];
 
@@ -1580,7 +1580,7 @@ class Handler {
 
             const response = await this.fritzbox.exec(
               'urn:DeviceConfig-com:serviceId:DeviceConfig1',
-              'X_AVM-DE_CreateUrlSID'
+              'X_AVM-DE_CreateUrlSID',
             );
             const sid = response['NewX_AVM-DE_UrlSID'].split('sid=')[1];
 
@@ -1626,7 +1626,7 @@ class Handler {
           try {
             const response = await this.fritzbox.exec(
               'urn:DeviceConfig-com:serviceId:DeviceConfig1',
-              'X_AVM-DE_CreateUrlSID'
+              'X_AVM-DE_CreateUrlSID',
             );
             const sid = response['NewX_AVM-DE_UrlSID'].split('sid=')[1];
 
@@ -1750,7 +1750,7 @@ class Handler {
 
             const response = await this.fritzbox.exec(
               'urn:DeviceConfig-com:serviceId:DeviceConfig1',
-              'X_AVM-DE_CreateUrlSID'
+              'X_AVM-DE_CreateUrlSID',
             );
             const sid = response['NewX_AVM-DE_UrlSID'].split('sid=')[1];
 
@@ -1818,7 +1818,7 @@ class Handler {
       default:
         logger.warn(
           `Can not handle SET event. Unknown accessory subtype (${subtype})`,
-          `${accessory.displayName} (${subtype})`
+          `${accessory.displayName} (${subtype})`,
         );
         break;
     }
@@ -1836,7 +1836,7 @@ class Handler {
             accessory &&
             accessory.context &&
             accessory.context.config.type === 'smarthome' &&
-            accessory.context.config.subtype !== 'smarthome-button'
+            accessory.context.config.subtype !== 'smarthome-button',
         );
 
         for (const accessory of accessories) {

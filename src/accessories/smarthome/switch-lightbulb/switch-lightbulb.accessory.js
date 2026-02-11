@@ -25,7 +25,7 @@ class Accessory {
     if (serviceOutlet) {
       logger.info(
         'Removing Outlet service',
-        `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+        `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
       );
       this.accessory.removeService(serviceOutlet);
     }
@@ -35,19 +35,19 @@ class Accessory {
       serviceSwitch = this.accessory.addService(
         this.api.hap.Service.Switch,
         this.accessory.displayName,
-        this.accessory.context.config.subtype
+        this.accessory.context.config.subtype,
       );
     }
 
     if (!serviceLightbulb) {
       logger.info(
         'Adding Lightbulb service',
-        `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+        `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
       );
       serviceLightbulb = this.accessory.addService(
         this.api.hap.Service.Lightbulb,
         this.accessory.displayName,
-        this.accessory.context.config.subtype
+        this.accessory.context.config.subtype,
       );
     }
 
@@ -55,12 +55,12 @@ class Accessory {
       if (!serviceTemp) {
         logger.info(
           'Adding Temperature service',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         serviceTemp = this.accessory.addService(
           this.api.hap.Service.TemperatureSensor,
           this.accessory.displayName,
-          this.accessory.context.config.subtype
+          this.accessory.context.config.subtype,
         );
       }
 
@@ -80,7 +80,7 @@ class Accessory {
         !this.accessory.context.config.color
       ) {
         serviceLightbulb.removeCharacteristic(
-          serviceLightbulb.getCharacteristic(this.api.hap.Characteristic.Brightness)
+          serviceLightbulb.getCharacteristic(this.api.hap.Characteristic.Brightness),
         );
       }
     }
@@ -116,7 +116,7 @@ class Accessory {
     } else {
       if (serviceLightbulb.testCharacteristic(this.api.hap.Characteristic.Brightness)) {
         serviceLightbulb.removeCharacteristic(
-          serviceLightbulb.getCharacteristic(this.api.hap.Characteristic.Brightness)
+          serviceLightbulb.getCharacteristic(this.api.hap.Characteristic.Brightness),
         );
       }
 
@@ -126,13 +126,13 @@ class Accessory {
 
       if (serviceLightbulb.testCharacteristic(this.api.hap.Characteristic.Saturation)) {
         serviceLightbulb.removeCharacteristic(
-          serviceLightbulb.getCharacteristic(this.api.hap.Characteristic.Saturation)
+          serviceLightbulb.getCharacteristic(this.api.hap.Characteristic.Saturation),
         );
       }
 
       if (serviceLightbulb.testCharacteristic(this.api.hap.Characteristic.ColorTemperature)) {
         serviceLightbulb.removeCharacteristic(
-          serviceLightbulb.getCharacteristic(this.api.hap.Characteristic.ColorTemperature)
+          serviceLightbulb.getCharacteristic(this.api.hap.Characteristic.ColorTemperature),
         );
       }
     }
@@ -145,7 +145,7 @@ class Accessory {
       serviceSwitch.getCharacteristic(this.api.hap.Characteristic.On).onSet((state) => {
         logger.info(
           'Changing state not allowed - "readOnly" is active!',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         setTimeout(() => serviceSwitch.getCharacteristic(this.api.hap.Characteristic.On).updateValue(!state), 1000);
       });

@@ -33,7 +33,7 @@ class Handler {
       if (!this.configured) {
         logger.debug(
           'Handler not configured yet. Skipping CHANGE event.',
-          `${accessory.displayName} (${accessory.context.config.subtype})`
+          `${accessory.displayName} (${accessory.context.config.subtype})`,
         );
         return;
       }
@@ -73,7 +73,7 @@ class Handler {
         default:
           logger.warn(
             `Can not handle CHANGE event. Unknown accessory subtype (${subtype})`,
-            `${accessory.displayName} (${subtype})`
+            `${accessory.displayName} (${subtype})`,
           );
           break;
       }
@@ -84,7 +84,7 @@ class Handler {
     if (!this.configured) {
       logger.debug(
         'Handler not configured yet. Skipping GET event.',
-        `${accessory.displayName} (${accessory.context.config.subtype})`
+        `${accessory.displayName} (${accessory.context.config.subtype})`,
       );
       return false;
     }
@@ -185,7 +185,7 @@ class Handler {
 
           const response = await fritzbox.exec(
             `urn:WLANConfiguration-com:serviceId:WLANConfiguration${wifiUnit2ghz}`,
-            'GetInfo'
+            'GetInfo',
           );
           logger.debug(response, `${accessory.displayName} (${subtype})`);
 
@@ -208,14 +208,14 @@ class Handler {
           if (wifiUnit5ghz === 0) {
             logger.warn(
               'Can not handle GET event, specified wifiUnits too low!',
-              `${accessory.displayName} (${subtype})`
+              `${accessory.displayName} (${subtype})`,
             );
             return false;
           }
 
           for (let i = 0; i < wifiUnit5ghz; i++) {
             promises.push(
-              fritzbox.exec(`urn:WLANConfiguration-com:serviceId:WLANConfiguration${startUnit}`, 'GetInfo')
+              fritzbox.exec(`urn:WLANConfiguration-com:serviceId:WLANConfiguration${startUnit}`, 'GetInfo'),
             );
 
             startUnit++;
@@ -240,7 +240,7 @@ class Handler {
 
           const response = await fritzbox.exec(
             `urn:WLANConfiguration-com:serviceId:WLANConfiguration${wifiUnitGuest}`,
-            'GetInfo'
+            'GetInfo',
           );
           logger.debug(response, `${accessory.displayName} (${subtype})`);
 
@@ -258,7 +258,7 @@ class Handler {
         try {
           const response = await fritzbox.exec(
             'urn:WLANConfiguration-com:serviceId:WLANConfiguration1',
-            'X_AVM-DE_GetWPSInfo'
+            'X_AVM-DE_GetWPSInfo',
           );
           logger.debug(response, `${accessory.displayName} (${subtype})`);
 
@@ -322,7 +322,7 @@ class Handler {
         try {
           let response = await fritzbox.exec(
             'urn:X_AVM-DE_OnTel-com:serviceId:X_AVM-DE_OnTel1',
-            'GetNumberOfDeflections'
+            'GetNumberOfDeflections',
           );
           logger.debug(response, `${accessory.displayName} (${subtype})`);
           const enabled = parseInt(response.NewNumberOfDeflections);
@@ -420,7 +420,7 @@ class Handler {
           const response = await fritzbox.exec(
             'urn:WANCIfConfig-com:serviceId:WANCommonInterfaceConfig1',
             'X_AVM-DE_GetOnlineMonitor',
-            { NewSyncGroupIndex: 0 }
+            { NewSyncGroupIndex: 0 },
           );
           logger.debug(response, `${accessory.displayName} (${subtype})`);
 
@@ -446,7 +446,7 @@ class Handler {
       default:
         logger.warn(
           `Can not handle GET event. Unknown accessory subtype (${subtype})`,
-          `${accessory.displayName} (${subtype})`
+          `${accessory.displayName} (${subtype})`,
         );
         break;
     }
@@ -458,7 +458,7 @@ class Handler {
     if (!this.configured) {
       logger.debug(
         'Handler not configured yet. Skipping SET event.',
-        `${accessory.displayName} (${accessory.context.config.subtype})`
+        `${accessory.displayName} (${accessory.context.config.subtype})`,
       );
       return;
     }
@@ -480,7 +480,7 @@ class Handler {
           setTimeout(
             () =>
               accessory.getService(this.api.hap.Service.Switch).getCharacteristic(characteristic).updateValue(!state),
-            1000
+            1000,
           );
         } else {
           if (accessory.context.config.master && accessory.context.config.reboot.on) {
@@ -499,7 +499,7 @@ class Handler {
           try {
             logger.debug(
               'Service: urn:DeviceConfig-com:serviceId:DeviceConfig1 - Command: Reboot - Actions: null',
-              `${accessory.displayName} (${subtype})`
+              `${accessory.displayName} (${subtype})`,
             );
             await fritzbox.exec('urn:DeviceConfig-com:serviceId:DeviceConfig1', 'Reboot');
 
@@ -511,7 +511,7 @@ class Handler {
             setTimeout(
               () =>
                 accessory.getService(this.api.hap.Service.Switch).getCharacteristic(characteristic).updateValue(!state),
-              1000
+              1000,
             );
           }
         }
@@ -527,9 +527,9 @@ class Handler {
             `Service: urn:WLANConfiguration-com:serviceId:WLANConfiguration${wifiUnit2ghz} - Command: SetEnable - Actions: ${JSON.stringify(
               {
                 NewEnable: state,
-              }
+              },
             )}`,
-            `${accessory.displayName} (${subtype})`
+            `${accessory.displayName} (${subtype})`,
           );
           await fritzbox.exec(`urn:WLANConfiguration-com:serviceId:WLANConfiguration${wifiUnit2ghz}`, 'SetEnable', {
             NewEnable: state,
@@ -541,7 +541,7 @@ class Handler {
           setTimeout(
             () =>
               accessory.getService(this.api.hap.Service.Switch).getCharacteristic(characteristic).updateValue(!state),
-            1000
+            1000,
           );
         }
         break;
@@ -557,13 +557,13 @@ class Handler {
           if (wifiUnit5ghz === 0) {
             logger.warn(
               'Can not handle SET event, specified wifiUnits too low!',
-              `${accessory.displayName} (${subtype})`
+              `${accessory.displayName} (${subtype})`,
             );
 
             setTimeout(
               () =>
                 accessory.getService(this.api.hap.Service.Switch).getCharacteristic(characteristic).updateValue(!state),
-              1000
+              1000,
             );
 
             return;
@@ -574,14 +574,14 @@ class Handler {
               `Service: urn:WLANConfiguration-com:serviceId:WLANConfiguration${startUnit} - Command: SetEnable - Actions: ${JSON.stringify(
                 {
                   NewEnable: state,
-                }
+                },
               )}`,
-              `${accessory.displayName} (${subtype})`
+              `${accessory.displayName} (${subtype})`,
             );
             promises.push(
               fritzbox.exec(`urn:WLANConfiguration-com:serviceId:WLANConfiguration${startUnit}`, 'SetEnable', {
                 NewEnable: state,
-              })
+              }),
             );
 
             startUnit++;
@@ -595,7 +595,7 @@ class Handler {
           setTimeout(
             () =>
               accessory.getService(this.api.hap.Service.Switch).getCharacteristic(characteristic).updateValue(!state),
-            1000
+            1000,
           );
         }
         break;
@@ -610,9 +610,9 @@ class Handler {
             `Service: urn:WLANConfiguration-com:serviceId:WLANConfiguration${wifiUnitGuest} - Command: SetEnable - Actions: ${JSON.stringify(
               {
                 NewEnable: state,
-              }
+              },
             )}`,
-            `${accessory.displayName} (${subtype})`
+            `${accessory.displayName} (${subtype})`,
           );
           await fritzbox.exec(`urn:WLANConfiguration-com:serviceId:WLANConfiguration${wifiUnitGuest}`, 'SetEnable', {
             NewEnable: state,
@@ -624,7 +624,7 @@ class Handler {
           setTimeout(
             () =>
               accessory.getService(this.api.hap.Service.Switch).getCharacteristic(characteristic).updateValue(!state),
-            1000
+            1000,
           );
         }
         break;
@@ -638,9 +638,9 @@ class Handler {
             `Service: urn:WLANConfiguration-com:serviceId:WLANConfiguration1 - Command: X_AVM-DE_SetWPSEnable - Actions: ${JSON.stringify(
               {
                 'NewX_AVM-DE_WPSEnable': status,
-              }
+              },
             )}`,
-            `${accessory.displayName} (${subtype})`
+            `${accessory.displayName} (${subtype})`,
           );
           await fritzbox.exec('urn:WLANConfiguration-com:serviceId:WLANConfiguration1', 'X_AVM-DE_SetWPSEnable', {
             'NewX_AVM-DE_WPSEnable': status,
@@ -652,7 +652,7 @@ class Handler {
           setTimeout(
             () =>
               accessory.getService(this.api.hap.Service.Switch).getCharacteristic(characteristic).updateValue(!state),
-            1000
+            1000,
           );
         }
         break;
@@ -668,7 +668,7 @@ class Handler {
 
           logger.debug(
             `Service: ${service} - Command: ForceTermination - Actions: null`,
-            `${accessory.displayName} (${subtype})`
+            `${accessory.displayName} (${subtype})`,
           );
           await fritzbox.exec(service, 'ForceTermination');
         } catch (err) {
@@ -678,7 +678,7 @@ class Handler {
           setTimeout(
             () =>
               accessory.getService(this.api.hap.Service.Switch).getCharacteristic(characteristic).updateValue(false),
-            1000
+            1000,
           );
         }
         break;
@@ -733,7 +733,7 @@ class Handler {
           setTimeout(
             () =>
               accessory.getService(this.api.hap.Service.Switch).getCharacteristic(characteristic).updateValue(!state),
-            1000
+            1000,
           );
         }
         break;
@@ -747,7 +747,7 @@ class Handler {
               NewIndex: 0,
               NewEnable: state ? '1' : '0',
             })}`,
-            `${accessory.displayName} (${subtype})`
+            `${accessory.displayName} (${subtype})`,
           );
           await fritzbox.exec('urn:X_AVM-DE_TAM-com:serviceId:X_AVM-DE_TAM1', 'SetEnable', {
             NewIndex: 0,
@@ -760,7 +760,7 @@ class Handler {
           setTimeout(
             () =>
               accessory.getService(this.api.hap.Service.Switch).getCharacteristic(characteristic).updateValue(!state),
-            1000
+            1000,
           );
         }
         break;
@@ -771,7 +771,7 @@ class Handler {
         try {
           logger.debug(
             'Service: urn:X_AVM-DE_OnTel-com:serviceId:X_AVM-DE_OnTel1 - Command: GetNumberOfDeflections - Actions: null',
-            `${accessory.displayName} (${subtype})`
+            `${accessory.displayName} (${subtype})`,
           );
           let data = await fritzbox.exec('urn:X_AVM-DE_OnTel-com:serviceId:X_AVM-DE_OnTel1', 'GetNumberOfDeflections');
           logger.debug(data, `${accessory.displayName} (${subtype})`);
@@ -791,9 +791,9 @@ class Handler {
                     {
                       NewDeflectionId: id,
                       NewEnable: state ? 1 : 0,
-                    }
+                    },
                   )}`,
-                  `${accessory.displayName} (${subtype})`
+                  `${accessory.displayName} (${subtype})`,
                 );
                 await fritzbox.exec('urn:X_AVM-DE_OnTel-com:serviceId:X_AVM-DE_OnTel1', 'SetDeflectionEnable', {
                   NewDeflectionId: id,
@@ -810,7 +810,7 @@ class Handler {
                     .getService(this.api.hap.Service.Switch)
                     .getCharacteristic(characteristic)
                     .updateValue(!state),
-                1000
+                1000,
               );
             }
           } else {
@@ -819,7 +819,7 @@ class Handler {
             setTimeout(
               () =>
                 accessory.getService(this.api.hap.Service.Switch).getCharacteristic(characteristic).updateValue(!state),
-              1000
+              1000,
             );
           }
         } catch (err) {
@@ -829,7 +829,7 @@ class Handler {
           setTimeout(
             () =>
               accessory.getService(this.api.hap.Service.Switch).getCharacteristic(characteristic).updateValue(!state),
-            1000
+            1000,
           );
         }
         break;
@@ -873,7 +873,7 @@ class Handler {
           setTimeout(
             () =>
               accessory.getService(this.api.hap.Service.Switch).getCharacteristic(characteristic).updateValue(!state),
-            1000
+            1000,
           );
         }
         break;
@@ -903,7 +903,7 @@ class Handler {
           setTimeout(
             () =>
               accessory.getService(this.api.hap.Service.Switch).getCharacteristic(characteristic).updateValue(!state),
-            1000
+            1000,
           );
         }
         break;
@@ -915,7 +915,7 @@ class Handler {
       default:
         logger.warn(
           `Can not handle SET event. Unknown accessory subtype (${subtype})`,
-          `${accessory.displayName} (${subtype})`
+          `${accessory.displayName} (${subtype})`,
         );
         break;
     }
@@ -971,7 +971,7 @@ class Handler {
       const validUUIDs = Object.keys(characteristics).map((uuid) => uuid);
       const accessories = this.accessories.filter(
         (accessory) =>
-          accessory && accessory.context && accessory.context.config && accessory.context.config.type === 'router'
+          accessory && accessory.context && accessory.context.config && accessory.context.config.type === 'router',
       );
 
       for (const accessory of accessories) {
@@ -994,13 +994,13 @@ class Handler {
                   await ExtrasHandler.get(
                     accessory,
                     characteristics[characteristic.UUID].subtype,
-                    this.api.hap.Characteristic[characteristics[characteristic.UUID].name]
+                    this.api.hap.Characteristic[characteristics[characteristic.UUID].name],
                   );
                 } else if (validUUIDs.includes(characteristic.UUID)) {
                   await this.get(
                     accessory,
                     characteristics[characteristic.UUID].subtype,
-                    this.api.hap.Characteristic[characteristics[characteristic.UUID].name]
+                    this.api.hap.Characteristic[characteristics[characteristic.UUID].name],
                   );
                 }
               }

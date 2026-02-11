@@ -24,7 +24,7 @@ class Accessory {
       service = this.accessory.addService(
         this.api.hap.Service.Switch,
         this.accessory.displayName,
-        this.accessory.context.config.subtype
+        this.accessory.context.config.subtype,
       );
     }
 

@@ -38,7 +38,7 @@ class Handler {
     if (!this.configured) {
       logger.debug(
         'Handler not configured yet. Skipping GET event.',
-        `${accessory.displayName} (${accessory.context.config.subtype})`
+        `${accessory.displayName} (${accessory.context.config.subtype})`,
       );
       return;
     }
@@ -99,7 +99,7 @@ class Handler {
               } else {
                 logger.warn(
                   'Can not find button data - "accType" and/or options correct?',
-                  `${accessory.displayName} (${subtype})`
+                  `${accessory.displayName} (${subtype})`,
                 );
               }
 
@@ -120,7 +120,7 @@ class Handler {
                 } else {
                   logger.warn(
                     'Can not find battery data - "accType" and/or options correct?',
-                    `${accessory.displayName} (${subtype})`
+                    `${accessory.displayName} (${subtype})`,
                   );
                 }
               }
@@ -130,7 +130,7 @@ class Handler {
           } else {
             logger.warn(
               `Can not find device with AIN: ${accessory.context.config.ain}`,
-              `${accessory.displayName} (${subtype})`
+              `${accessory.displayName} (${subtype})`,
             );
           }
         } catch (err) {
@@ -160,7 +160,7 @@ class Handler {
                       accessory
                         .getServiceById(
                           this.api.hap.Service.StatelessProgrammableSwitch,
-                          `${accessory.context.config.subtype}-1`
+                          `${accessory.context.config.subtype}-1`,
                         )
                         .getCharacteristic(this.api.hap.Characteristic.ProgrammableSwitchEvent)
                         .updateValue(0);
@@ -182,7 +182,7 @@ class Handler {
                       accessory
                         .getServiceById(
                           this.api.hap.Service.StatelessProgrammableSwitch,
-                          `${accessory.context.config.subtype}-2`
+                          `${accessory.context.config.subtype}-2`,
                         )
                         .getCharacteristic(this.api.hap.Characteristic.ProgrammableSwitchEvent)
                         .updateValue(0);
@@ -205,7 +205,7 @@ class Handler {
                       accessory
                         .getServiceById(
                           this.api.hap.Service.StatelessProgrammableSwitch,
-                          `${accessory.context.config.subtype}-3`
+                          `${accessory.context.config.subtype}-3`,
                         )
                         .getCharacteristic(this.api.hap.Characteristic.ProgrammableSwitchEvent)
                         .updateValue(0);
@@ -228,7 +228,7 @@ class Handler {
                       accessory
                         .getServiceById(
                           this.api.hap.Service.StatelessProgrammableSwitch,
-                          `${accessory.context.config.subtype}-4`
+                          `${accessory.context.config.subtype}-4`,
                         )
                         .getCharacteristic(this.api.hap.Characteristic.ProgrammableSwitchEvent)
                         .updateValue(0);
@@ -241,7 +241,7 @@ class Handler {
               } else {
                 logger.warn(
                   'Can not find button data - "accType" and/or options correct?',
-                  `${accessory.displayName} (${subtype})`
+                  `${accessory.displayName} (${subtype})`,
                 );
               }
 
@@ -262,7 +262,7 @@ class Handler {
                 } else {
                   logger.warn(
                     'Can not find battery data - "accType" and/or options correct?',
-                    `${accessory.displayName} (${subtype})`
+                    `${accessory.displayName} (${subtype})`,
                   );
                 }
               }
@@ -272,7 +272,7 @@ class Handler {
           } else {
             logger.warn(
               `Can not find device with AIN: ${accessory.context.config.ain}`,
-              `${accessory.displayName} (${subtype})`
+              `${accessory.displayName} (${subtype})`,
             );
           }
         } catch (err) {
@@ -283,7 +283,7 @@ class Handler {
       default:
         logger.warn(
           `Can not handle GET event. Not supported buttons (${buttons})`,
-          `${accessory.displayName} (${subtype})`
+          `${accessory.displayName} (${subtype})`,
         );
         break;
     }
@@ -298,7 +298,7 @@ class Handler {
       //logger.debug(this.smarthomeList, 'Smarthome');
 
       const accessories = this.accessories.filter(
-        (accessory) => accessory && accessory.context && accessory.context.config.subtype === 'smarthome-button'
+        (accessory) => accessory && accessory.context && accessory.context.config.subtype === 'smarthome-button',
       );
 
       for (const accessory of accessories) {

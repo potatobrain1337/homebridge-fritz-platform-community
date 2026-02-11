@@ -28,7 +28,7 @@ class Accessory {
       service = this.accessory.addService(
         this.api.hap.Service.Switch,
         this.accessory.displayName,
-        this.accessory.context.config.subtype
+        this.accessory.context.config.subtype,
       );
     }
 
@@ -39,7 +39,7 @@ class Accessory {
       if (!service.testCharacteristic(this.api.hap.Characteristic.WifiTwo)) {
         logger.info(
           'Adding WifiTwo characteristic',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service.addCharacteristic(this.api.hap.Characteristic.WifiTwo);
       }
@@ -57,7 +57,7 @@ class Accessory {
       if (service.testCharacteristic(this.api.hap.Characteristic.WifiTwo)) {
         logger.info(
           'Removing WifiTwo characteristic',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service.removeCharacteristic(service.getCharacteristic(this.api.hap.Characteristic.WifiTwo));
       }
@@ -68,7 +68,7 @@ class Accessory {
       if (!service.testCharacteristic(this.api.hap.Characteristic.WifiFive)) {
         logger.info(
           'Adding WifiFive characteristic',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service.addCharacteristic(this.api.hap.Characteristic.WifiFive);
       }
@@ -86,7 +86,7 @@ class Accessory {
       if (service.testCharacteristic(this.api.hap.Characteristic.WifiFive)) {
         logger.info(
           'Removing WifiFive characteristic',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service.removeCharacteristic(service.getCharacteristic(this.api.hap.Characteristic.WifiFive));
       }
@@ -97,7 +97,7 @@ class Accessory {
       if (!service.testCharacteristic(this.api.hap.Characteristic.WifiGuest)) {
         logger.info(
           'Adding WifiGuest characteristic',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service.addCharacteristic(this.api.hap.Characteristic.WifiGuest);
       }
@@ -115,7 +115,7 @@ class Accessory {
       if (service.testCharacteristic(this.api.hap.Characteristic.WifiGuest)) {
         logger.info(
           'Removing WifiGuest characteristic',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service.removeCharacteristic(service.getCharacteristic(this.api.hap.Characteristic.WifiGuest));
       }
@@ -126,7 +126,7 @@ class Accessory {
       if (!service.testCharacteristic(this.api.hap.Characteristic.WifiWPS)) {
         logger.info(
           'Adding WifiWPS characteristic',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service.addCharacteristic(this.api.hap.Characteristic.WifiWPS);
       }
@@ -144,7 +144,7 @@ class Accessory {
       if (service.testCharacteristic(this.api.hap.Characteristic.WifiWPS)) {
         logger.info(
           'Removing WifiWPS characteristic',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service.removeCharacteristic(service.getCharacteristic(this.api.hap.Characteristic.WifiWPS));
       }
@@ -155,7 +155,7 @@ class Accessory {
       if (!service.testCharacteristic(this.api.hap.Characteristic.Reconnect)) {
         logger.info(
           'Adding Reconnect characteristic',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service.addCharacteristic(this.api.hap.Characteristic.Reconnect);
       }
@@ -168,7 +168,7 @@ class Accessory {
       if (service.testCharacteristic(this.api.hap.Characteristic.Reconnect)) {
         logger.info(
           'Removing Reconnect characteristic',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service.removeCharacteristic(service.getCharacteristic(this.api.hap.Characteristic.Reconnect));
       }
@@ -179,7 +179,7 @@ class Accessory {
       if (!service.testCharacteristic(this.api.hap.Characteristic.DECT)) {
         logger.info(
           'Adding DECT characteristic',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service.addCharacteristic(this.api.hap.Characteristic.DECT);
       }
@@ -197,7 +197,7 @@ class Accessory {
       if (service.testCharacteristic(this.api.hap.Characteristic.DECT)) {
         logger.info(
           'Removing DECT characteristic',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service.removeCharacteristic(service.getCharacteristic(this.api.hap.Characteristic.DECT));
       }
@@ -208,7 +208,7 @@ class Accessory {
       if (!service.testCharacteristic(this.api.hap.Characteristic.AnsweringMachine)) {
         logger.info(
           'Adding AnsweringMachine characteristic',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service.addCharacteristic(this.api.hap.Characteristic.AnsweringMachine);
       }
@@ -226,7 +226,7 @@ class Accessory {
       if (service.testCharacteristic(this.api.hap.Characteristic.AnsweringMachine)) {
         logger.info(
           'Removing AnsweringMachine characteristic',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service.removeCharacteristic(service.getCharacteristic(this.api.hap.Characteristic.AnsweringMachine));
       }
@@ -237,7 +237,7 @@ class Accessory {
       if (!service.testCharacteristic(this.api.hap.Characteristic.Deflection)) {
         logger.info(
           'Adding Deflection characteristic',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service.addCharacteristic(this.api.hap.Characteristic.Deflection);
       }
@@ -245,7 +245,7 @@ class Accessory {
       service
         .getCharacteristic(this.api.hap.Characteristic.Deflection)
         .onSet((state) =>
-          this.handler.set(state, this.accessory, 'deflection', this.api.hap.Characteristic.Deflection)
+          this.handler.set(state, this.accessory, 'deflection', this.api.hap.Characteristic.Deflection),
         );
 
       if (polling.exclude.includes('deflection')) {
@@ -257,7 +257,7 @@ class Accessory {
       if (service.testCharacteristic(this.api.hap.Characteristic.Deflection)) {
         logger.info(
           'Removing Deflection characteristic',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service.removeCharacteristic(service.getCharacteristic(this.api.hap.Characteristic.Deflection));
       }
@@ -268,7 +268,7 @@ class Accessory {
       if (!service.testCharacteristic(this.api.hap.Characteristic.DeviceLED)) {
         logger.info(
           'Adding DeviceLED characteristic',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service.addCharacteristic(this.api.hap.Characteristic.DeviceLED);
       }
@@ -286,7 +286,7 @@ class Accessory {
       if (service.testCharacteristic(this.api.hap.Characteristic.DeviceLED)) {
         logger.info(
           'Removing DeviceLED characteristic',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service.removeCharacteristic(service.getCharacteristic(this.api.hap.Characteristic.DeviceLED));
       }
@@ -297,7 +297,7 @@ class Accessory {
       if (!service.testCharacteristic(this.api.hap.Characteristic.DeviceLock)) {
         logger.info(
           'Adding DeviceLock characteristic',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service.addCharacteristic(this.api.hap.Characteristic.DeviceLock);
       }
@@ -315,7 +315,7 @@ class Accessory {
       if (service.testCharacteristic(this.api.hap.Characteristic.DeviceLock)) {
         logger.info(
           'Removing DeviceLock characteristic',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service.removeCharacteristic(service.getCharacteristic(this.api.hap.Characteristic.DeviceLock));
       }
@@ -326,7 +326,7 @@ class Accessory {
       if (!service.testCharacteristic(this.api.hap.Characteristic.Download)) {
         logger.info(
           'Adding Download characteristic',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service.addCharacteristic(this.api.hap.Characteristic.Download);
       }
@@ -334,7 +334,7 @@ class Accessory {
       if (!service.testCharacteristic(this.api.hap.Characteristic.Upload)) {
         logger.info(
           'Adding Upload characteristic',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service.addCharacteristic(this.api.hap.Characteristic.Upload);
       }
@@ -346,14 +346,14 @@ class Accessory {
       if (service.testCharacteristic(this.api.hap.Characteristic.Download)) {
         logger.info(
           'Removing Download characteristic',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service.removeCharacteristic(service.getCharacteristic(this.api.hap.Characteristic.Download));
       }
       if (service.testCharacteristic(this.api.hap.Characteristic.Upload)) {
         logger.info(
           'Removing Upload characteristic',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         service.removeCharacteristic(service.getCharacteristic(this.api.hap.Characteristic.Upload));
       }
@@ -362,7 +362,7 @@ class Accessory {
     if (service.testCharacteristic(this.api.hap.Characteristic.Ping)) {
       logger.info(
         'Removing Ping characteristic',
-        `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+        `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
       );
       service.removeCharacteristic(service.getCharacteristic(this.api.hap.Characteristic.Ping));
     }
@@ -375,7 +375,7 @@ class Accessory {
         if (!service.testCharacteristic(this.api.hap.Characteristic.DialAlarm)) {
           logger.info(
             'Adding DialAlarm characteristic',
-            `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+            `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
           );
           service.addCharacteristic(this.api.hap.Characteristic.DialAlarm);
         }
@@ -389,7 +389,7 @@ class Accessory {
         if (service.testCharacteristic(this.api.hap.Characteristic.DialAlarm)) {
           logger.info(
             'Removing DialAlarm characteristic',
-            `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+            `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
           );
           service.removeCharacteristic(service.getCharacteristic(this.api.hap.Characteristic.DialAlarm));
         }
@@ -404,7 +404,7 @@ class Accessory {
         if (!service.testCharacteristic(this.api.hap.Characteristic.WakeUp)) {
           logger.info(
             'Adding WakeUp characteristic',
-            `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+            `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
           );
           service.addCharacteristic(this.api.hap.Characteristic.WakeUp);
         }
@@ -417,7 +417,7 @@ class Accessory {
         if (service.testCharacteristic(this.api.hap.Characteristic.WakeUp)) {
           logger.info(
             'Removing WakeUp characteristic',
-            `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+            `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
           );
           service.removeCharacteristic(service.getCharacteristic(this.api.hap.Characteristic.WakeUp));
         }
@@ -432,7 +432,7 @@ class Accessory {
         if (!service.testCharacteristic(this.api.hap.Characteristic.RingLock)) {
           logger.info(
             'Adding RingLock characteristic',
-            `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+            `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
           );
           service.addCharacteristic(this.api.hap.Characteristic.RingLock);
         }
@@ -450,7 +450,7 @@ class Accessory {
         if (service.testCharacteristic(this.api.hap.Characteristic.RingLock)) {
           logger.info(
             'Removing RingLock characteristic',
-            `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+            `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
           );
           service.removeCharacteristic(service.getCharacteristic(this.api.hap.Characteristic.RingLock));
         }
@@ -461,7 +461,7 @@ class Accessory {
         if (!service.testCharacteristic(this.api.hap.Characteristic.PhoneBook)) {
           logger.info(
             'Adding PhoneBook characteristic',
-            `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+            `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
           );
           service.addCharacteristic(this.api.hap.Characteristic.PhoneBook);
         }
@@ -470,13 +470,13 @@ class Accessory {
           .getCharacteristic(this.api.hap.Characteristic.PhoneBook)
           .onGet(() => ExtrasHandler.get(this.accessory, 'phoneBook', this.api.hap.Characteristic.PhoneBook))
           .onSet((state) =>
-            ExtrasHandler.set(state, this.accessory, 'phoneBook', this.api.hap.Characteristic.PhoneBook)
+            ExtrasHandler.set(state, this.accessory, 'phoneBook', this.api.hap.Characteristic.PhoneBook),
           );
       } else {
         if (service.testCharacteristic(this.api.hap.Characteristic.PhoneBook)) {
           logger.info(
             'Removing PhoneBook characteristic',
-            `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+            `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
           );
           service.removeCharacteristic(service.getCharacteristic(this.api.hap.Characteristic.PhoneBook));
         }
@@ -492,7 +492,7 @@ class Accessory {
         if (!service.testCharacteristic(this.api.hap.Characteristic.DNSServer)) {
           logger.info(
             'Adding DNSServer characteristic',
-            `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+            `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
           );
           service.addCharacteristic(this.api.hap.Characteristic.DNSServer);
         }
@@ -500,7 +500,7 @@ class Accessory {
         service
           .getCharacteristic(this.api.hap.Characteristic.DNSServer)
           .onSet((state) =>
-            ExtrasHandler.set(state, this.accessory, 'dnsServer', this.api.hap.Characteristic.DNSServer)
+            ExtrasHandler.set(state, this.accessory, 'dnsServer', this.api.hap.Characteristic.DNSServer),
           );
 
         if (polling.exclude.includes('dnsServer')) {
@@ -512,7 +512,7 @@ class Accessory {
         if (service.testCharacteristic(this.api.hap.Characteristic.DNSServer)) {
           logger.info(
             'Removing DNSServer characteristic',
-            `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+            `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
           );
           service.removeCharacteristic(service.getCharacteristic(this.api.hap.Characteristic.DNSServer));
         }
@@ -527,7 +527,7 @@ class Accessory {
         if (!service.testCharacteristic(this.api.hap.Characteristic.FallbackInternet)) {
           logger.info(
             'Adding FallbackInternet characteristic',
-            `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+            `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
           );
           service.addCharacteristic(this.api.hap.Characteristic.FallbackInternet);
         }
@@ -535,21 +535,21 @@ class Accessory {
         service
           .getCharacteristic(this.api.hap.Characteristic.FallbackInternet)
           .onSet((state) =>
-            ExtrasHandler.set(state, this.accessory, 'fallbackInternet', this.api.hap.Characteristic.FallbackInternet)
+            ExtrasHandler.set(state, this.accessory, 'fallbackInternet', this.api.hap.Characteristic.FallbackInternet),
           );
 
         if (polling.exclude.includes('fallbackInternet')) {
           service
             .getCharacteristic(this.api.hap.Characteristic.FallbackInternet)
             .onGet(() =>
-              ExtrasHandler.get(this.accessory, 'fallbackInternet', this.api.hap.Characteristic.FallbackInternet)
+              ExtrasHandler.get(this.accessory, 'fallbackInternet', this.api.hap.Characteristic.FallbackInternet),
             );
         }
       } else {
         if (service.testCharacteristic(this.api.hap.Characteristic.FallbackInternet)) {
           logger.info(
             'Removing FallbackInternet characteristic',
-            `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+            `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
           );
           service.removeCharacteristic(service.getCharacteristic(this.api.hap.Characteristic.FallbackInternet));
         }
@@ -568,7 +568,7 @@ class Accessory {
       service.getCharacteristic(this.api.hap.Characteristic.On).onSet((state) => {
         logger.info(
           'Changing state not allowed - "readOnly" is active!',
-          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`
+          `${this.accessory.displayName} (${this.accessory.context.config.subtype})`,
         );
         setTimeout(() => service.getCharacteristic(this.api.hap.Characteristic.On).updateValue(!state), 1000);
       });

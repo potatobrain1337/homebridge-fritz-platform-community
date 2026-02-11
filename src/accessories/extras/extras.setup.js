@@ -8,7 +8,8 @@ const Setup = (devices, extrasConfig, meshMaster) => {
   const validExtrasInConfig = ['alarm', 'phoneBook', 'ringlock', 'wakeup', 'dnsServer'];
 
   let extras = Object.keys(extrasConfig).filter(
-    (name) => validExtrasInConfig.includes(name) && extrasConfig[name].active && extrasConfig[name].accType === 'switch'
+    (name) =>
+      validExtrasInConfig.includes(name) && extrasConfig[name].active && extrasConfig[name].accType === 'switch',
   );
 
   extras.forEach((name) => {
@@ -22,7 +23,7 @@ const Setup = (devices, extrasConfig, meshMaster) => {
         if (!device.extras[name].telNr) {
           logger.warn(
             'There is no "telNr" configured for this EXTRAS (alarm) device. This device will be skipped.',
-            device.name
+            device.name,
           );
           error = true;
         }
@@ -31,7 +32,7 @@ const Setup = (devices, extrasConfig, meshMaster) => {
         if (!device.extras[name].internNr) {
           logger.warn(
             'There is no "internNr" configured for this EXTRAS (wakeup) device. This device will be skipped.',
-            device.name
+            device.name,
           );
           error = true;
         }
@@ -40,7 +41,7 @@ const Setup = (devices, extrasConfig, meshMaster) => {
         if (!device.extras[name].DECTphones) {
           logger.warn(
             'There is no "DECTphones" configured for this EXTRAS (ringlock) device. This device will be skipped.',
-            device.name
+            device.name,
           );
           error = true;
         }
@@ -52,13 +53,13 @@ const Setup = (devices, extrasConfig, meshMaster) => {
         if (!device.extras[name].preferredDns) {
           logger.warn(
             'There is no "preferredDns" configured for this EXTRAS (dnsServer) device. This device will be skipped.',
-            device.name
+            device.name,
           );
           error = true;
         } else if (!device.extras[name].alternateDns) {
           logger.warn(
             'There is no "alternateDns" configured for this EXTRAS (dnsServer) device. This device will be skipped.',
-            device.name
+            device.name,
           );
           error = true;
         }
@@ -67,7 +68,7 @@ const Setup = (devices, extrasConfig, meshMaster) => {
         if (!device.extras[name].provider) {
           logger.warn(
             'There is no "provider" configured for this EXTRAS (fallbackInternet) device. This device will be skipped.',
-            device.name
+            device.name,
           );
           error = true;
         }

@@ -39,7 +39,7 @@ class Handler {
     if (!this.configured) {
       logger.debug(
         'Handler not configured yet. Skipping SET event.',
-        `${accessory.displayName} (${accessory.context.config.subtype})`
+        `${accessory.displayName} (${accessory.context.config.subtype})`,
       );
       return;
     }
@@ -63,7 +63,7 @@ class Handler {
             .getService(this.api.hap.Service.Switch)
             .getCharacteristic(this.api.hap.Characteristic.On)
             .updateValue(false),
-        1000
+        1000,
       );
     }
   }

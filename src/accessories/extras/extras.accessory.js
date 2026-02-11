@@ -41,7 +41,7 @@ class Accessory {
       service = this.accessory.addService(
         this.api.hap.Service.Switch,
         this.accessory.displayName,
-        this.accessory.context.config.subtype
+        this.accessory.context.config.subtype,
       );
     }
 
@@ -50,12 +50,12 @@ class Accessory {
       .onSet((state) =>
         validOptionsSwitches.includes(this.accessory.context.config.subtype)
           ? RouterHandler.set(state, this.accessory)
-          : this.handler.set(state, this.accessory)
+          : this.handler.set(state, this.accessory),
       )
       .on('change', (context) =>
         validOptionsSwitches.includes(this.accessory.context.config.subtype)
           ? RouterHandler.change(context, this.accessory)
-          : this.handler.change(context, this.accessory)
+          : this.handler.change(context, this.accessory),
       );
 
     if (polling.exclude.includes(this.accessory.context.config.subtype)) {
@@ -64,7 +64,7 @@ class Accessory {
         .onGet(() =>
           validOptionsSwitches.includes(this.accessory.context.config.subtype)
             ? RouterHandler.get(this.accessory)
-            : this.handler.get(this.accessory)
+            : this.handler.get(this.accessory),
         );
     }
   }

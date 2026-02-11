@@ -17,7 +17,7 @@ const Setup = (devices, childlockConfig) => {
     } else if (!device.ips.length) {
       logger.warn(
         'There is no or no valid IP addresses configured for this CHILDLOCK device. This device will be skipped.',
-        device.name
+        device.name,
       );
       error = true;
     }

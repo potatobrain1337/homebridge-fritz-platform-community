@@ -75,7 +75,7 @@ class Handler {
 
                 logger.info(
                   `Wait ${newState ? this.device.onDelay : this.device.offDelay}s before switching state!`,
-                  this.device.name
+                  this.device.name,
                 );
               } else {
                 this.device.passed = true;

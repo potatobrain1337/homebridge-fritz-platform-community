@@ -28,7 +28,7 @@ class Accessory {
       service = this.accessory.addService(
         this.api.hap.Service.ContactSensor,
         this.accessory.displayName,
-        this.accessory.context.config.subtype
+        this.accessory.context.config.subtype,
       );
     }
 
@@ -109,9 +109,12 @@ class Accessory {
       status: state ? 1 : 0,
     });
 
-    setTimeout(() => {
-      this.refreshHistory(service);
-    }, 10 * 60 * 1000);
+    setTimeout(
+      () => {
+        this.refreshHistory(service);
+      },
+      10 * 60 * 1000,
+    );
   }
 }
 

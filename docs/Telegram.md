@@ -12,7 +12,7 @@ Before you can use the "Telegram Notification" functionality, you need to set up
 
 - Enter username for Bot: FirstWarningBot
 
-- Then you will see a token, something like this: **110201543:AAHdqTcvCH1vGWJxfSeofSAs0K5PALDsaw** - Copy token 
+- Then you will see a token, something like: **123456789:REPLACE_WITH_YOUR_BOT_TOKEN_FROM_BOTFATHER** – copy this token 
 
 - In Telegram write: **/setjoingroups**
 

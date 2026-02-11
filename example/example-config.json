@@ -19,7 +19,7 @@
                     "host": "192.168.178.1",
                     "port": 49000,
                     "username": "Test",
-                    "password": "Test123",
+                    "password": "YOUR_FRITZBOX_PASSWORD",
                     "manufacturer": "Fritz Box",
                     "model": "7590",
                     "serialNumber": "12345",
@@ -51,7 +51,7 @@
                     "host": "192.168.178.28",
                     "port": 49000,
                     "username": "Test",
-                    "password": "Test123",
+                    "password": "YOUR_FRITZBOX_PASSWORD",
                     "manufacturer": "Fritz Box",
                     "model": "7430 BU",
                     "serialNumber": "12345",
@@ -76,7 +76,7 @@
                     "host": "192.168.178.66",
                     "port": 49000,
                     "username": "Test",
-                    "password": "Test123",
+                    "password": "YOUR_FRITZBOX_PASSWORD",
                     "ssl": true,
                     "tr064": true,
                     "igd": false,
@@ -289,7 +289,7 @@
             },
             "telegram": {
                 "active": true,
-                "token": "123456678:Aaahdjeijbdnkkiwhwhwbwk_hahqh124",
+                "token": "YOUR_TELEGRAM_BOT_TOKEN",
                 "chatID": "-11223344556677",
                 "messages": {
                     "presence": {
