@@ -6,7 +6,9 @@ const logger = require('../utils/logger');
 /** Escape user-controlled text for Telegram Markdown to prevent injection. */
 function escapeMarkdown(text) {
   if (typeof text !== 'string') return String(text);
-  return text.replace(/[_*[\]()~`>#+=|{}.!-]/g, '\\$&');
+  return text
+    .replace(/\\/g, '\\\\')
+    .replace(/[_*[\]()~`>#+=|{}.!-]/g, '\\$&');
 }
 
 class Telegram {
@@ -43,11 +45,11 @@ class Telegram {
       let message = this.messages[target][dest];
 
       if (message.includes('@') && replacer !== undefined) {
-        message = message.replace('@', escapeMarkdown(String(replacer)));
+        message = message.replace(/@/g, escapeMarkdown(String(replacer)));
       }
 
       if (message.includes('%') && additional !== undefined) {
-        message = message.replace('%', escapeMarkdown(String(additional)));
+        message = message.replace(/%/g, escapeMarkdown(String(additional)));
       }
 
       logger.debug(`Telegram: Sending Message: ${message}`);
