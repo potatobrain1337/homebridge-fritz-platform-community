@@ -10,6 +10,7 @@ on:
     branches: [master]
   schedule:
     - cron: '0 6 * * 1'  # weekly Monday 06:00 UTC
+  workflow_dispatch: {}  # Manuell auslösbar (Security-Tab: Re-scan)
 
 jobs:
   analyze:
